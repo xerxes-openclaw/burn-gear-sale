@@ -1,0 +1,692 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burn Gear Sale · Shiftpods, a 30ft Dome, and a Barn Full of Playa Gear</title>
+<meta name="description" content="Griff is selling his Burning Man gear: ShiftPod 2s, ShiftPod Minis, connection tunnels, a 30ft geodesic dome, and a barn full of more. Pickup in Rochester, WA, Aug 10-23. Cash or crypto.">
+<style>
+  /* ---------- Reset ---------- */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; }
+
+  /* ---------- Tokens ---------- */
+  :root {
+    --sunset-deep:   #2b1029;   /* dusk purple, near black */
+    --sunset-plum:   #5b1d4e;   /* magenta dusk */
+    --sunset-ember:  #c23a2b;   /* deep sunset red-orange */
+    --sunset-orange: #e8622c;   /* main orange */
+    --sunset-gold:   #f4a343;   /* low sun gold */
+    --sunset-haze:   #f7c98b;   /* horizon haze */
+    --sand:          #f2e7d5;   /* playa sand */
+    --bone:          #faf4e8;   /* bone white */
+    --dust:          #e3d3ba;   /* dusty card edge */
+    --ink:           #33241f;   /* warm near-black text */
+    --ink-soft:      #6d5a4e;   /* secondary text */
+    --card:          #fffdf7;
+
+    --radius: 14px;
+    --radius-lg: 22px;
+    --shadow-1: 0 1px 2px rgba(51,36,31,.06), 0 4px 14px rgba(51,36,31,.08);
+    --shadow-2: 0 2px 4px rgba(51,36,31,.08), 0 14px 34px rgba(51,36,31,.16);
+
+    --space-1: .5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2.5rem;
+    --space-5: 4rem;
+    --space-6: 6rem;
+
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font);
+    background: var(--sand);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ---------- Dust / grain (CSS only, sits over everything) ---------- */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: .5;
+    mix-blend-mode: multiply;
+    background-image:
+      radial-gradient(rgba(51,36,31,.055) 1px, transparent 1.3px),
+      radial-gradient(rgba(51,36,31,.035) 1px, transparent 1.4px);
+    background-size: 5px 5px, 9px 9px;
+    background-position: 0 0, 3px 4px;
+  }
+
+  .wrap {
+    width: min(1160px, 100% - 2.5rem);
+    margin-inline: auto;
+  }
+
+  /* ---------- Type scale ---------- */
+  h1, h2, h3 { line-height: 1.08; letter-spacing: -.02em; text-wrap: balance; }
+  h1 { font-size: clamp(2.6rem, 8.5vw, 5.2rem); font-weight: 800; }
+  h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 800; }
+  h3 { font-size: 1.35rem; font-weight: 750; }
+
+  .kicker {
+    display: inline-block;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+  }
+
+  .lede { font-size: clamp(1.05rem, 2.2vw, 1.3rem); max-width: 38ch; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55em;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: .85em 1.6em;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    will-change: transform;
+  }
+  .btn:active { transform: translateY(1px); }
+
+  .btn-primary {
+    background: var(--sunset-orange);
+    color: var(--bone);
+    box-shadow: var(--shadow-1);
+  }
+  .btn-primary:hover {
+    background: var(--sunset-ember);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--bone);
+    box-shadow: inset 0 0 0 2px rgba(250,244,232,.55);
+  }
+  .btn-ghost:hover {
+    box-shadow: inset 0 0 0 2px var(--bone);
+    background: rgba(250,244,232,.1);
+    transform: translateY(-2px);
+  }
+
+  .btn-dark {
+    background: var(--ink);
+    color: var(--bone);
+    box-shadow: var(--shadow-1);
+  }
+  .btn-dark:hover {
+    background: var(--sunset-plum);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    color: var(--bone);
+    background:
+      linear-gradient(180deg,
+        var(--sunset-deep) 0%,
+        var(--sunset-plum) 30%,
+        var(--sunset-ember) 58%,
+        var(--sunset-orange) 76%,
+        var(--sunset-gold) 92%,
+        var(--sunset-haze) 100%);
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    padding: clamp(4.5rem, 12vw, 8rem) 0 clamp(9rem, 20vw, 13rem);
+  }
+
+  .hero .kicker { color: var(--sunset-haze); }
+
+  .hero h1 { margin: var(--space-2) 0 var(--space-3); max-width: 14ch; }
+
+  .hero .lede { color: rgba(250,244,232,.9); margin-bottom: var(--space-4); }
+
+  .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+  /* big low sun */
+  .hero-sun {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: -6vw;
+    width: clamp(280px, 52vw, 640px);
+    aspect-ratio: 1;
+    transform: translateX(12%);
+    border-radius: 50%;
+    background: radial-gradient(circle,
+      rgba(250,244,232,.95) 0%,
+      rgba(247,201,139,.85) 34%,
+      rgba(244,163,67,.45) 60%,
+      rgba(244,163,67,0) 72%);
+    filter: blur(2px);
+  }
+
+  /* horizon line art strip */
+  .hero-art {
+    position: absolute;
+    z-index: 2;
+    left: 0; right: 0; bottom: -2px;
+    pointer-events: none;
+  }
+  .hero-art svg { width: 100%; height: auto; }
+
+  /* ---------- Sections ---------- */
+  section { padding: var(--space-6) 0; }
+  .section-head { max-width: 60ch; margin-bottom: var(--space-4); }
+  .section-head .kicker { color: var(--sunset-ember); }
+  .section-head h2 { margin: .5rem 0 .75rem; }
+  .section-head p { color: var(--ink-soft); font-size: 1.08rem; }
+
+  /* ---------- Item grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); } }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--dust);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-1);
+    overflow: hidden;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-2);
+  }
+
+  .card-art {
+    background: linear-gradient(180deg, var(--sunset-plum), var(--sunset-ember) 55%, var(--sunset-gold));
+    padding: var(--space-3) var(--space-3) 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 168px;
+  }
+  .card-art svg { width: 78%; height: auto; }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .price {
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: var(--sunset-ember);
+    white-space: nowrap;
+  }
+
+  .card p { color: var(--ink-soft); font-size: .97rem; }
+
+  .card .specs {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .45rem;
+  }
+  .card .specs li {
+    font-size: .78rem;
+    font-weight: 650;
+    color: var(--ink);
+    background: var(--sand);
+    border: 1px solid var(--dust);
+    border-radius: 999px;
+    padding: .28em .85em;
+    white-space: nowrap;
+  }
+
+  .card .btn { margin-top: auto; align-self: flex-start; }
+
+  .card-wide { grid-column: 1 / -1; }
+  @media (min-width: 640px) {
+    .card-wide { flex-direction: row; }
+    .card-wide .card-art { min-height: 0; width: 42%; padding: var(--space-3); align-items: center; }
+    .card-wide .card-art svg { width: 88%; }
+    .card-wide .card-body { width: 58%; padding: var(--space-4); }
+  }
+
+  /* ---------- Barn ---------- */
+  .barn {
+    background: var(--sunset-deep);
+    color: var(--bone);
+    position: relative;
+    overflow: hidden;
+  }
+  .barn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(60% 90% at 85% 110%, rgba(232,98,44,.35), transparent 70%),
+      radial-gradient(50% 70% at 8% -10%, rgba(91,29,78,.8), transparent 70%);
+    pointer-events: none;
+  }
+  .barn .wrap { position: relative; z-index: 1; }
+  .barn .kicker { color: var(--sunset-gold); }
+  .barn h2 { margin: .5rem 0 var(--space-2); }
+  .barn .lede { color: rgba(250,244,232,.85); max-width: 52ch; margin-bottom: var(--space-3); }
+
+  .barn-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    margin-bottom: var(--space-4);
+    max-width: 46rem;
+  }
+  .barn-list li {
+    font-size: .92rem;
+    font-weight: 650;
+    padding: .45em 1.1em;
+    border-radius: 999px;
+    background: rgba(250,244,232,.08);
+    border: 1px solid rgba(250,244,232,.28);
+    transition: background .18s ease, border-color .18s ease;
+  }
+  .barn-list li:hover {
+    background: rgba(232,98,44,.3);
+    border-color: var(--sunset-gold);
+  }
+
+  .barn-grid {
+    display: grid;
+    gap: var(--space-4);
+    align-items: center;
+  }
+  @media (min-width: 900px) {
+    .barn-grid { grid-template-columns: 1.15fr .85fr; }
+  }
+  .barn-art svg { width: min(420px, 88%); margin-inline: auto; }
+
+  /* ---------- Logistics ---------- */
+  .logistics-grid {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 780px) { .logistics-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .fact {
+    background: var(--card);
+    border: 1px solid var(--dust);
+    border-radius: var(--radius);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-1);
+  }
+  .fact h3 { margin-bottom: .5rem; font-size: 1.1rem; }
+  .fact p { color: var(--ink-soft); font-size: .96rem; }
+  .fact .fact-icon {
+    width: 2.4rem; height: 2.4rem;
+    margin-bottom: var(--space-2);
+    color: var(--sunset-ember);
+  }
+
+  /* ---------- Final CTA band ---------- */
+  .cta-band {
+    color: var(--bone);
+    text-align: center;
+    background:
+      linear-gradient(180deg,
+        var(--sunset-plum) 0%,
+        var(--sunset-ember) 45%,
+        var(--sunset-orange) 78%,
+        var(--sunset-gold) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-band .wrap { position: relative; z-index: 1; }
+  .cta-band h2 { max-width: 20ch; margin: .5rem auto var(--space-2); }
+  .cta-band p { color: rgba(250,244,232,.92); max-width: 46ch; margin: 0 auto var(--space-4); font-size: 1.1rem; }
+  .cta-band .kicker { color: var(--sunset-haze); }
+  .cta-sun {
+    position: absolute;
+    left: 50%; bottom: -30%;
+    width: min(70vw, 560px);
+    aspect-ratio: 1;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(250,244,232,.5), rgba(250,244,232,0) 70%);
+    pointer-events: none;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--sunset-deep);
+    color: rgba(250,244,232,.65);
+    font-size: .88rem;
+    padding: var(--space-4) 0;
+    text-align: center;
+  }
+  footer a { color: var(--sunset-gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* line-art stroke style: hand-drawn feel */
+  .sketch {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="hero-sun" aria-hidden="true"></div>
+
+  <div class="wrap hero-inner">
+    <span class="kicker">Griff's burn gear sale · Aug 10-23</span>
+    <h1>The playa called. It wants this gear back out there.</h1>
+    <p class="lede">ShiftPods, connection tunnels, a 30ft geodesic dome, and a whole barn of camp gear. Stored indoors, priced to move, sold in person.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#gear">See the gear</a>
+      <a class="btn btn-ghost" href="#contact">Message Griff</a>
+    </div>
+  </div>
+
+  <!-- horizon: shiftpod + dome silhouettes, hand-drawn line art -->
+  <div class="hero-art" aria-hidden="true">
+    <svg viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice">
+      <!-- dusty ground -->
+      <path d="M0 205 Q 240 196 480 203 T 960 201 T 1440 204 L1440 240 L0 240 Z" fill="#f2e7d5"/>
+      <path class="sketch" d="M0 205 Q 240 196 480 203 T 960 201 T 1440 204" stroke="#33241f" stroke-width="3"/>
+      <!-- shiftpod silhouette, left -->
+      <g class="sketch" stroke="#faf4e8" stroke-width="3.5">
+        <path d="M300 203 C 302 152 336 118 388 116 C 440 118 474 152 476 203" fill="rgba(43,16,41,.35)"/>
+        <path d="M330 203 C 338 165 360 146 388 145 C 416 146 438 165 446 203"/>
+        <path d="M388 145 L 388 203"/>
+        <path d="M311 186 Q 388 173 465 186"/>
+      </g>
+      <!-- geodesic dome silhouette, right -->
+      <g class="sketch" stroke="#faf4e8" stroke-width="3">
+        <path d="M880 201 A 155 155 0 0 1 1190 201" fill="rgba(43,16,41,.35)"/>
+        <path d="M918 201 L 972 118 L 1035 74 L 1098 118 L 1152 201"/>
+        <path d="M880 201 L 972 118 L 1035 201 L 1098 118 L 1190 201"/>
+        <path d="M972 118 L 1098 118"/>
+        <path d="M918 201 L 1035 74 L 1152 201"/>
+      </g>
+      <!-- little dust swirls -->
+      <g class="sketch" stroke="#e3d3ba" stroke-width="2.5" opacity=".8">
+        <path d="M120 190 q 22 -12 44 0 q 18 10 36 -2"/>
+        <path d="M640 194 q 18 -10 36 0 q 16 9 32 -2"/>
+        <path d="M1270 192 q 20 -11 40 0"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= GEAR ================= -->
+<section id="gear">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The listings</span>
+      <h2>Shelter for your next burn</h2>
+      <p>Every card links to its Facebook Marketplace listing. Message there, then come see the gear with your own eyes. No checkout here, on purpose.</p>
+    </div>
+
+    <div class="grid">
+
+      <!-- ShiftPod 2 -->
+      <article class="card">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 220 120" class="sketch" stroke="#faf4e8" stroke-width="3">
+            <path d="M20 112 C 22 55 60 20 110 18 C 160 20 198 55 200 112" fill="rgba(43,16,41,.25)"/>
+            <path d="M52 112 C 60 70 82 48 110 47 C 138 48 160 70 168 112"/>
+            <path d="M110 47 L 110 112"/>
+            <path d="M31 92 Q 110 78 189 92"/>
+            <path d="M14 112 H 206" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>ShiftPod 2</h3>
+            <span class="price">$900</span>
+          </div>
+          <p>The classic Burning Man shelter. 12x12 with room to stand, AC ports, and a reflective shell that laughs at the afternoon sun. Stored indoors, most have seen 2-3 burns. Multiple available, so come pick yours in person.</p>
+          <ul class="specs">
+            <li>12x12 ft</li>
+            <li>~70 lbs</li>
+            <li>Packs to 76in x 14in</li>
+            <li>Multiple available</li>
+          </ul>
+          <a class="btn btn-dark" href="TODO-SP2-LINK">View on Marketplace</a>
+        </div>
+      </article>
+
+      <!-- ShiftPod Mini -->
+      <article class="card">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 220 120" class="sketch" stroke="#faf4e8" stroke-width="3">
+            <path d="M52 112 C 54 72 78 48 110 46 C 142 48 166 72 168 112" fill="rgba(43,16,41,.25)"/>
+            <path d="M74 112 C 80 84 94 68 110 67 C 126 68 140 84 146 112"/>
+            <path d="M110 67 L 110 112"/>
+            <path d="M60 98 Q 110 89 160 98"/>
+            <path d="M14 112 H 206" stroke-width="3.5"/>
+            <path d="M182 60 q 10 -6 20 0" stroke="#f4a343" stroke-width="2.5"/>
+            <path d="M22 52 q 9 -5 18 0" stroke="#f4a343" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>ShiftPod Mini</h3>
+            <span class="price">$400</span>
+          </div>
+          <p>Same idea, smaller footprint, easier on the wallet. Zippable floor you can run an AC hose through, rain fly included. 2018/2019 stock in great shape.</p>
+          <ul class="specs">
+            <li>Zippable floor</li>
+            <li>AC hose friendly</li>
+            <li>Rain fly included</li>
+            <li>2018/2019 stock</li>
+          </ul>
+          <a class="btn btn-dark" href="TODO-MINI-LINK">View on Marketplace</a>
+        </div>
+      </article>
+
+      <!-- Tunnels -->
+      <article class="card">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 220 120" class="sketch" stroke="#faf4e8" stroke-width="3">
+            <path d="M8 112 C 9 78 30 58 58 57 C 86 58 106 78 108 112" fill="rgba(43,16,41,.25)"/>
+            <path d="M112 112 C 113 78 134 58 162 57 C 190 58 210 78 212 112" fill="rgba(43,16,41,.25)"/>
+            <path d="M82 112 C 84 95 96 86 110 86 C 124 86 136 95 138 112" fill="rgba(43,16,41,.35)"/>
+            <path d="M88 98 Q 110 92 132 98"/>
+            <path d="M2 112 H 218" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>SP2 Connection Tunnels</h3>
+            <span class="price">$100</span>
+          </div>
+          <p>Zip two ShiftPods together and suddenly your camp has a hallway. Instant oasis, zero dust lock between pods. These can ship.</p>
+          <ul class="specs">
+            <li>Joins two SP2s</li>
+            <li>Can ship</li>
+          </ul>
+          <a class="btn btn-dark" href="TODO-TUNNELS-LINK">View on Marketplace</a>
+        </div>
+      </article>
+
+      <!-- Dome, featured wide card -->
+      <article class="card card-wide">
+        <div class="card-art" aria-hidden="true">
+          <svg viewBox="0 0 320 170" class="sketch" stroke="#faf4e8" stroke-width="3">
+            <path d="M20 158 A 140 140 0 0 1 300 158" fill="rgba(43,16,41,.25)"/>
+            <path d="M55 158 L 105 83 L 160 44 L 215 83 L 265 158"/>
+            <path d="M20 158 L 105 83 L 160 158 L 215 83 L 300 158"/>
+            <path d="M105 83 L 215 83"/>
+            <path d="M55 158 L 160 44 L 265 158"/>
+            <path d="M87 158 L 160 100 L 233 158"/>
+            <path d="M10 158 H 310" stroke-width="3.5"/>
+          </svg>
+        </div>
+        <div class="card-body">
+          <div class="card-top">
+            <h3>30ft Geodesic Dome</h3>
+            <span class="price">$8,000</span>
+          </div>
+          <p>The camp centerpiece. 30ft across, 16ft tall, roughly 680 sq ft of livable shade for your whole crew. Located in Santa Cruz, and yes, it can be delivered on playa.</p>
+          <ul class="specs">
+            <li>30ft diameter</li>
+            <li>16ft tall</li>
+            <li>~680 sq ft shade</li>
+            <li>Santa Cruz</li>
+            <li>Playa delivery possible</li>
+          </ul>
+          <a class="btn btn-primary" href="https://www.facebook.com/marketplace/item/4512171489103557/">View on Marketplace</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= THE BARN ================= -->
+<section class="barn">
+  <div class="wrap barn-grid">
+    <div>
+      <span class="kicker">Beyond the listings</span>
+      <h2>Then there's the barn.</h2>
+      <p class="lede">A whole barn full of burn gear that never made it to Marketplace. Come dig through it in person. Best finds go to the people who show up.</p>
+      <ul class="barn-list">
+        <li>Carports · $300</li>
+        <li>Sump pumps</li>
+        <li>Trifold mattresses</li>
+        <li>Bikes</li>
+        <li>Sheets</li>
+        <li>And more</li>
+      </ul>
+      <a class="btn btn-primary" href="#contact">Book a barn visit</a>
+    </div>
+    <div class="barn-art" aria-hidden="true">
+      <svg viewBox="0 0 320 220" class="sketch" stroke="#f7c98b" stroke-width="3">
+        <!-- barn -->
+        <path d="M50 200 L 50 110 L 100 62 L 160 45 L 220 62 L 270 110 L 270 200 Z" fill="rgba(250,244,232,.05)"/>
+        <path d="M50 110 L 100 96 L 160 88 L 220 96 L 270 110"/>
+        <path d="M138 200 L 138 138 Q 160 128 182 138 L 182 200"/>
+        <path d="M138 143 L 182 195 M 182 143 L 138 195"/>
+        <path d="M80 156 h 26 v 26 h -26 Z"/>
+        <path d="M214 156 h 26 v 26 h -26 Z"/>
+        <path d="M30 200 H 290" stroke-width="3.5"/>
+        <!-- moon + stars -->
+        <path d="M287 38 a 14 14 0 1 1 -10 -24 a 11 11 0 0 0 10 24" stroke-width="2.5"/>
+        <path d="M40 44 l 3 3 M 43 41 l -3 3 M 232 20 l 3 3 M 235 17 l -3 3" stroke-width="2.5"/>
+        <!-- dust drift -->
+        <path d="M56 214 q 24 -10 48 0 q 22 9 44 -2" stroke-width="2.5" opacity=".6"/>
+        <path d="M190 214 q 20 -9 40 0" stroke-width="2.5" opacity=".6"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOGISTICS ================= -->
+<section id="pickup">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">The deal</span>
+      <h2>Pickup, payment, and why in person</h2>
+    </div>
+    <div class="logistics-grid">
+      <div class="fact">
+        <svg class="fact-icon sketch" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
+          <path d="M20 35 C 12 26 7 20 7 14 a 13 13 0 0 1 26 0 c 0 6 -5 12 -13 21 Z"/>
+          <circle cx="20" cy="14" r="4.5"/>
+        </svg>
+        <h3>Rochester, WA</h3>
+        <p>Exact address shared when you book. Too many scammers online, and honestly, Griff wants you to see the gear with your own eyes before money moves.</p>
+      </div>
+      <div class="fact">
+        <svg class="fact-icon sketch" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
+          <circle cx="20" cy="20" r="15"/>
+          <path d="M20 11 L 20 20 L 27 24"/>
+        </svg>
+        <h3>Aug 10-23</h3>
+        <p>Griff can meet almost any time in that window. Pick a slot, roll up, kick the tires, load your rig.</p>
+      </div>
+      <div class="fact">
+        <svg class="fact-icon sketch" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
+          <rect x="5" y="12" width="30" height="18" rx="3"/>
+          <path d="M5 19 H 35"/>
+          <path d="M10 25 H 18"/>
+        </svg>
+        <h3>Cash or crypto</h3>
+        <p>Both spend the same out here. Bring whichever you trust; Griff has been taking crypto since before it was cool.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="cta-band" id="contact">
+  <div class="cta-sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <span class="kicker">Last call before the dust flies</span>
+    <h2>Come get this gear back on the playa.</h2>
+    <p>Message Griff, book a barn pickup in Rochester, WA between Aug 10 and 23, and come talk gear in person.</p>
+    <div class="cta-buttons">
+      <a class="btn btn-dark" href="https://t.me/GriffGreen">Telegram</a>
+      <a class="btn btn-dark" href="TODO-FB-PROFILE-LINK">Facebook</a>
+      <a class="btn btn-dark" href="mailto:griff@giveth.io">Email</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Sold by Griff, one burner to another. Every item links to its <a href="#gear">Marketplace listing</a>. No checkout, no shipping labels (except the tunnels), no corporate anything.</p>
+  </div>
+</footer>
+
+</body>
+</html>
