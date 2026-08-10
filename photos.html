@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Photo pack: burn gear sale</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background: #2a1f18; color: #f2e8d8; padding: 16px; }
+  h1 { font-size: 1.3rem; margin: 8px 0 4px; }
+  p { margin: 4px 0 16px; color: #cbb89f; font-size: .9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  figure { margin: 0; background: #3a2c20; border-radius: 8px; padding: 8px; }
+  img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; display: block; }
+  figcaption { font-size: .8rem; padding-top: 6px; word-break: break-all; }
+  a { color: #f0b45c; }
+</style>
+</head>
+<body>
+<h1>Photo pack for Marketplace ads</h1>
+<p>Long-press any photo to save it. Same photos as the sale page, so the listings and the site match.</p>
+<div class="grid" id="g"></div>
+<script>
+  var names = ["santa","sp2","mini","shiftpods","trike","trike2","water-jugs","drums","coolers","fridge","freezer","buckets","totes","garbage-cans","bikes","bikes2","bike-baskets","green-cart","wagons","mattresses","folding-chairs","bean-bag","blue-fabric","flags","igloo","carport-poles","inverter","batteries","sump-pumps","propane-gas","speakers","mixer"];
+  var g = document.getElementById("g");
+  names.forEach(function(n){
+    var f = document.createElement("figure");
+    f.innerHTML = '<a href="img/' + n + '.jpg"><img loading="lazy" src="img/' + n + '.jpg" alt="' + n + '"></a><figcaption>' + n + '.jpg</figcaption>';
+    g.appendChild(f);
+  });
+</script>
+</body>
+</html>
