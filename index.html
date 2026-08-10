@@ -1,692 +1,934 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Burn Gear Sale · Shiftpods, a 30ft Dome, and a Barn Full of Playa Gear</title>
-<meta name="description" content="Griff is selling his Burning Man gear: ShiftPod 2s, ShiftPod Minis, connection tunnels, a 30ft geodesic dome, and a barn full of more. Pickup in Rochester, WA, Aug 10-23. Cash or crypto.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santa's Burn Gear Sale · Rochester, WA</title>
+<meta name="description" content="Santa is cleaning out the barn before the burn. ShiftPods, a 30ft dome, bikes, water jugs, and a whole barn of playa gear. Rochester WA pickup, Aug 10-23.">
 <style>
-  /* ---------- Reset ---------- */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  img, svg { display: block; max-width: 100%; }
-  a { color: inherit; }
+/* ============================================================
+   SANTA'S DUSTY WORKSHOP x DESERT NOEL, hybrid D
+   Base: variant A (barn wood, polaroids, gift tags, string lights).
+   Hero: variant B (dusk-to-ember sky, serif italic headline, horizon).
+   One marquee strip from variant C, rewarmed to the A palette.
+   All CSS inline, system fonts only, zero external requests.
+   ============================================================ */
+:root {
+  --wood-dark: #3b2416;
+  --wood: #5a3a24;
+  --wood-light: #7a5236;
+  --kraft: #d9bd93;
+  --kraft-deep: #c9a877;
+  --cream: #f6ecd9;
+  --paper: #fdf9f0;
+  --dust-red: #b5402f;
+  --dust-red-deep: #8e2f22;
+  --gold: #d99a2b;
+  --gold-soft: #e8bc6a;
+  --pine: #4e6b45;
+  --ink: #33241a;
+  --ink-soft: #6b543f;
+  --dusk: #241a33;
+  --dusk-2: #2f2242;
+  --rose: #d9a89e;
+  --ember: #c96f3b;
+  --snow: #faf6ef;
+  --shadow: 0 6px 18px rgba(59, 36, 22, 0.28);
+  --serif: Rockwell, "Roboto Slab", Georgia, "Times New Roman", serif;
+  --editorial: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --hand: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background-color: var(--cream);
+  /* subtle kraft-paper mottling */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 10%, rgba(217, 189, 147, 0.35), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(201, 168, 119, 0.25), transparent 60%),
+    radial-gradient(ellipse 70% 45% at 45% 95%, rgba(217, 189, 147, 0.3), transparent 65%);
+  line-height: 1.5;
+  /* last line of defense against horizontal panning on mobile:
+     clip where supported (cannot be scrolled even programmatically),
+     hidden as the fallback for older browsers */
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--dust-red-deep); }
 
-  /* ---------- Tokens ---------- */
-  :root {
-    --sunset-deep:   #2b1029;   /* dusk purple, near black */
-    --sunset-plum:   #5b1d4e;   /* magenta dusk */
-    --sunset-ember:  #c23a2b;   /* deep sunset red-orange */
-    --sunset-orange: #e8622c;   /* main orange */
-    --sunset-gold:   #f4a343;   /* low sun gold */
-    --sunset-haze:   #f7c98b;   /* horizon haze */
-    --sand:          #f2e7d5;   /* playa sand */
-    --bone:          #faf4e8;   /* bone white */
-    --dust:          #e3d3ba;   /* dusty card edge */
-    --ink:           #33241f;   /* warm near-black text */
-    --ink-soft:      #6d5a4e;   /* secondary text */
-    --card:          #fffdf7;
+/* ---------- wood plank texture (footer, section bands) ---------- */
+.wood {
+  background-color: var(--wood);
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(0,0,0,0.18) 0px, rgba(0,0,0,0.18) 2px,
+      transparent 2px, transparent 140px),
+    repeating-linear-gradient(0deg,
+      rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px,
+      transparent 1px, transparent 9px),
+    linear-gradient(180deg, var(--wood-light), var(--wood) 40%, var(--wood-dark));
+  color: var(--cream);
+}
 
-    --radius: 14px;
-    --radius-lg: 22px;
-    --shadow-1: 0 1px 2px rgba(51,36,31,.06), 0 4px 14px rgba(51,36,31,.08);
-    --shadow-2: 0 2px 4px rgba(51,36,31,.08), 0 14px 34px rgba(51,36,31,.16);
+/* ---------- string lights ---------- */
+.lights {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 34px;
+  border-top: 3px solid rgba(30, 18, 10, 0.75);
+  overflow: hidden;
+  padding: 0 6px;
+}
+.lights i {
+  width: 13px; height: 13px;
+  border-radius: 50% 50% 50% 50% / 42% 42% 58% 58%;
+  position: relative;
+  top: 8px;
+  flex: 0 0 auto;
+}
+.lights i::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: 4px;
+  width: 5px; height: 8px;
+  background: #2a1a10;
+  border-radius: 2px 2px 0 0;
+}
+.lights i:nth-child(4n+1) { background: var(--dust-red); box-shadow: 0 0 10px 2px rgba(214, 88, 62, 0.75); }
+.lights i:nth-child(4n+2) { background: var(--gold-soft); box-shadow: 0 0 10px 2px rgba(232, 188, 106, 0.85); top: 13px; }
+.lights i:nth-child(4n+3) { background: #f3e3c0; box-shadow: 0 0 10px 2px rgba(243, 227, 192, 0.8); top: 6px; }
+.lights i:nth-child(4n+4) { background: var(--pine); box-shadow: 0 0 10px 2px rgba(124, 168, 110, 0.6); top: 11px; }
+@media (max-width: 700px) {
+  .lights i:nth-child(2n) { display: none; }
+}
 
-    --space-1: .5rem;
-    --space-2: 1rem;
-    --space-3: 1.5rem;
-    --space-4: 2.5rem;
-    --space-5: 4rem;
-    --space-6: 6rem;
+/* ---------- layout helpers ---------- */
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+section { padding: 56px 0; }
+h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); color: var(--wood-dark); }
+.kicker {
+  font-family: var(--hand);
+  font-size: 1.05rem;
+  color: var(--dust-red);
+  margin-bottom: 4px;
+}
+.section-head { text-align: center; margin-bottom: 36px; }
+.section-head p.sub { color: var(--ink-soft); max-width: 560px; margin: 10px auto 0; }
 
-    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
+/* ---------- hero: dusk-to-ember sky over the barn party ---------- */
+header.hero {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  color: var(--snow);
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,.65) 50%, transparent 51%),
+    radial-gradient(1px 1px at 26% 9%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 38% 24%, rgba(255,240,220,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 12%, rgba(255,255,255,.55) 50%, transparent 51%),
+    radial-gradient(2px 2px at 68% 20%, rgba(255,235,210,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 79% 8%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 26%, rgba(255,255,255,.45) 50%, transparent 51%),
+    radial-gradient(1px 1px at 47% 30%, rgba(255,255,255,.35) 50%, transparent 51%),
+    radial-gradient(1px 1px at 7% 34%, rgba(255,255,255,.3) 50%, transparent 51%),
+    linear-gradient(180deg, var(--dusk) 0%, var(--dusk-2) 42%, #5a3a52 74%, #a75b4a 92%, var(--ember) 100%);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  padding: 48px 20px 56px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.hero .kicker-line {
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-family: var(--editorial);
+  font-weight: 400;
+  font-size: clamp(2.3rem, 6vw, 3.9rem);
+  line-height: 1.06;
+  color: var(--snow);
+}
+.hero h1 em { font-style: italic; color: var(--rose); }
+.hero p.pitch {
+  font-size: 1.05rem;
+  color: #efe3e6;
+  max-width: 52ch;
+  margin: 18px 0 26px;
+}
+.btn {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-red { background: var(--dust-red); color: #fff8ec; box-shadow: 0 4px 0 var(--dust-red-deep); }
+.btn-ghost { background: transparent; color: var(--snow); border-color: rgba(250,246,239,0.55); }
+.btn-kraft { background: var(--kraft); color: var(--wood-dark); box-shadow: 0 4px 0 var(--kraft-deep); }
+.hero .btn { margin-right: 10px; margin-bottom: 10px; }
+/* playa mountain horizon at the base of the sky */
+.hero .horizon {
+  height: 56px;
+  background-color: rgba(36, 26, 51, 0.55);
+  border-bottom: 6px solid var(--dusk);
+  clip-path: polygon(0 62%, 9% 55%, 18% 64%, 30% 50%, 41% 62%, 52% 46%, 63% 60%, 74% 50%, 85% 62%, 93% 54%, 100% 62%, 100% 100%, 0 100%);
+}
 
-  html { scroll-behavior: smooth; }
+/* ---------- marquee strip (one, slow, warm) ---------- */
+.marquee {
+  background: linear-gradient(180deg, var(--dust-red), var(--dust-red-deep));
+  color: var(--cream);
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: var(--serif);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-size: clamp(14px, 2vw, 19px);
+  padding: 0.55em 0;
+  border-bottom: 3px solid rgba(59, 36, 22, 0.4);
+}
+.marquee .track { display: inline-block; animation: sleigh 48s linear infinite; }
+.marquee .track > span { display: inline-block; padding-right: 0.5em; }
+@keyframes sleigh { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee .track { animation: none; }
+}
 
-  body {
-    font-family: var(--font);
-    background: var(--sand);
-    color: var(--ink);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+/* ---------- polaroid frames ---------- */
+.polaroid {
+  background: var(--paper);
+  padding: 12px 12px 14px;
+  box-shadow: var(--shadow);
+  border-radius: 3px;
+  position: relative;
+}
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  /* warm grade so dust reads golden-hour, not grim */
+  filter: sepia(0.18) saturate(1.08) contrast(1.03) brightness(1.02);
+  border-radius: 2px;
+}
+.polaroid .cap {
+  font-family: var(--hand);
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  padding-top: 10px;
+}
+.polaroid::before { /* tape strip */
+  content: "";
+  position: absolute;
+  top: -12px; left: 50%;
+  width: 84px; height: 24px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(232, 188, 106, 0.45);
+  border-left: 1px dashed rgba(140, 100, 40, 0.35);
+  border-right: 1px dashed rgba(140, 100, 40, 0.35);
+}
+.tilt-l { transform: rotate(-2.4deg); }
+.tilt-r { transform: rotate(2deg); }
 
-  /* ---------- Dust / grain (CSS only, sits over everything) ---------- */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 50;
-    opacity: .5;
-    mix-blend-mode: multiply;
-    background-image:
-      radial-gradient(rgba(51,36,31,.055) 1px, transparent 1.3px),
-      radial-gradient(rgba(51,36,31,.035) 1px, transparent 1.4px);
-    background-size: 5px 5px, 9px 9px;
-    background-position: 0 0, 3px 4px;
-  }
+.hero-photo { max-width: 340px; margin: 0 auto; }
+.hero-photo .polaroid { box-shadow: 0 10px 28px rgba(15, 8, 24, 0.55); }
+.hero-photo .cap { font-size: 1.05rem; }
 
-  .wrap {
-    width: min(1160px, 100% - 2.5rem);
-    margin-inline: auto;
-  }
+/* ---------- gift tag price labels ---------- */
+.tag {
+  position: absolute;
+  top: 14px; right: -10px;
+  z-index: 2;
+  background: linear-gradient(160deg, var(--kraft), var(--kraft-deep));
+  color: var(--wood-dark);
+  font-family: var(--serif);
+  font-weight: bold;
+  padding: 7px 14px 7px 22px;
+  font-size: 1.05rem;
+  clip-path: polygon(14px 0, 100% 0, 100% 100%, 14px 100%, 0 50%);
+  box-shadow: 0 3px 8px rgba(59,36,22,0.35);
+  transform: rotate(4deg);
+  white-space: nowrap;
+}
+.tag::before { /* punched hole */
+  content: "";
+  position: absolute;
+  left: 9px; top: 50%;
+  width: 6px; height: 6px;
+  transform: translateY(-50%);
+  background: var(--cream);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.4);
+}
+.tag small { font-weight: normal; font-size: 0.72rem; display: block; margin-top: -2px; font-family: var(--hand); }
+.tag.free { background: linear-gradient(160deg, #6b8a5f, var(--pine)); color: #f2f7ee; }
+.tag.ask { background: linear-gradient(160deg, #c46a52, var(--dust-red)); color: #fff3e6; }
 
-  /* ---------- Type scale ---------- */
-  h1, h2, h3 { line-height: 1.08; letter-spacing: -.02em; text-wrap: balance; }
-  h1 { font-size: clamp(2.6rem, 8.5vw, 5.2rem); font-weight: 800; }
-  h2 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 800; }
-  h3 { font-size: 1.35rem; font-weight: 750; }
+/* ---------- anchor listings ---------- */
+.anchors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 42px 34px;
+}
+.anchor-card {
+  background: var(--paper);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  overflow: visible;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(122, 82, 54, 0.18);
+}
+.anchor-card .photo {
+  height: 260px;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
+  background: var(--kraft);
+}
+.anchor-card .photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: sepia(0.15) saturate(1.08) contrast(1.03);
+}
+.anchor-card .photo svg { width: 100%; height: 100%; display: block; }
+.anchor-card .body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.anchor-card h3 { font-size: 1.35rem; color: var(--wood-dark); }
+.anchor-card p { color: var(--ink-soft); font-size: 0.97rem; }
+.anchor-card .cta-row { margin-top: auto; padding-top: 8px; }
+.anchor-card .btn { font-size: 0.95rem; padding: 11px 18px; }
+.anchor-card .tag { top: -14px; right: 14px; font-size: 1.25rem; padding: 9px 16px 9px 26px; }
 
-  .kicker {
-    display: inline-block;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-  }
+/* ---------- barn grid ---------- */
+#barn { position: relative; }
+.barn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 30px 22px;
+}
+.barn-card {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease;
+  display: block;
+}
+.barn-card:hover { transform: rotate(0deg) translateY(-4px) scale(1.02); z-index: 3; }
+.barn-card .polaroid img { aspect-ratio: 1 / 1.1; }
+/* tag pinned over the PHOTO, never over the caption text */
+.barn-card .tag { top: 22px; bottom: auto; right: -8px; font-size: 0.92rem; padding: 5px 11px 5px 20px; }
+.barn-card .cap b { color: var(--ink); font-family: var(--hand); }
+.barn-card:nth-child(4n+1) .polaroid { transform: rotate(-2deg); }
+.barn-card:nth-child(4n+2) .polaroid { transform: rotate(1.6deg); }
+.barn-card:nth-child(4n+3) .polaroid { transform: rotate(-1deg); }
+.barn-card:nth-child(4n+4) .polaroid { transform: rotate(2.2deg); }
+.barn-card:hover .polaroid { transform: rotate(0deg); }
 
-  .lede { font-size: clamp(1.05rem, 2.2vw, 1.3rem); max-width: 38ch; }
+/* text-only note card (hexayurt) */
+.note-card .polaroid {
+  aspect-ratio: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(165deg, var(--kraft), var(--kraft-deep));
+}
+.note-card .note-inner {
+  font-family: var(--hand);
+  color: var(--wood-dark);
+  text-align: center;
+  padding: 26px 14px;
+  font-size: 1rem;
+}
+.note-card .note-inner b { font-size: 1.15rem; display: block; margin-bottom: 8px; }
 
-  /* ---------- Buttons ---------- */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: .55em;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: .85em 1.6em;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    will-change: transform;
-  }
-  .btn:active { transform: translateY(1px); }
+/* ---------- how pickup works ---------- */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.step {
+  background: var(--paper);
+  border: 1px dashed var(--kraft-deep);
+  border-radius: 8px;
+  padding: 22px 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(59,36,22,0.12);
+}
+.step .num {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--paper);
+  background: var(--dust-red);
+  width: 44px; height: 44px;
+  line-height: 44px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  box-shadow: 0 3px 0 var(--dust-red-deep);
+}
+.step h3 { font-size: 1.05rem; margin-bottom: 6px; color: var(--wood-dark); }
+.step p { font-size: 0.9rem; color: var(--ink-soft); }
 
-  .btn-primary {
-    background: var(--sunset-orange);
-    color: var(--bone);
-    box-shadow: var(--shadow-1);
-  }
-  .btn-primary:hover {
-    background: var(--sunset-ember);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-2);
-  }
+/* ---------- contact / footer ---------- */
+footer { padding: 0; }
+.contact-inner {
+  text-align: center;
+  padding: 60px 20px 30px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.contact-inner h2 { color: var(--cream); }
+.contact-inner p { color: #ead9ba; margin: 12px auto 26px; max-width: 52ch; }
+.contact-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.fineprint {
+  font-size: 0.8rem;
+  color: rgba(234, 217, 186, 0.55);
+  text-align: center;
+  padding: 26px 20px 30px;
+  font-family: var(--hand);
+}
 
-  .btn-ghost {
-    background: transparent;
-    color: var(--bone);
-    box-shadow: inset 0 0 0 2px rgba(250,244,232,.55);
-  }
-  .btn-ghost:hover {
-    box-shadow: inset 0 0 0 2px var(--bone);
-    background: rgba(250,244,232,.1);
-    transform: translateY(-2px);
-  }
+/* ---------- santa aside ---------- */
+.santa-aside {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  align-items: center;
+  background: var(--paper);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 34px;
+  border: 1px solid rgba(122,82,54,0.15);
+}
+.santa-aside .polaroid { max-width: 280px; }
+.santa-aside h2 { margin-bottom: 10px; }
+.santa-aside p { color: var(--ink-soft); margin-bottom: 12px; }
+.santa-aside .hand-quote {
+  font-family: var(--hand);
+  color: var(--dust-red);
+  font-size: 1.1rem;
+}
 
-  .btn-dark {
-    background: var(--ink);
-    color: var(--bone);
-    box-shadow: var(--shadow-1);
-  }
-  .btn-dark:hover {
-    background: var(--sunset-plum);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-2);
-  }
+/* ---------- barn cluster headers ---------- */
+.cluster-head {
+  grid-column: 1 / -1;
+  font-family: var(--hand);
+  color: var(--gold-soft);
+  font-size: 1.25rem;
+  padding: 14px 2px 4px;
+  border-bottom: 1px dashed rgba(232, 188, 106, 0.45);
+}
+.cluster-head:first-child { padding-top: 0; }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    position: relative;
-    color: var(--bone);
-    background:
-      linear-gradient(180deg,
-        var(--sunset-deep) 0%,
-        var(--sunset-plum) 30%,
-        var(--sunset-ember) 58%,
-        var(--sunset-orange) 76%,
-        var(--sunset-gold) 92%,
-        var(--sunset-haze) 100%);
-    overflow: hidden;
-  }
+/* ---------- sticky Telegram pill ---------- */
+.sticky-santa {
+  position: fixed;
+  right: 14px;
+  bottom: 14px;
+  z-index: 60;
+  background: var(--dust-red);
+  color: #fff8ec;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(59, 36, 22, 0.45);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.sticky-santa.show { opacity: 1; transform: none; pointer-events: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .sticky-santa { transition: none; transform: none; }
+}
+@media (max-width: 420px) {
+  .sticky-santa { font-size: 0.82rem; padding: 8px 13px; right: 10px; bottom: 10px; }
+}
 
-  .hero-inner {
-    position: relative;
-    z-index: 2;
-    padding: clamp(4.5rem, 12vw, 8rem) 0 clamp(9rem, 20vw, 13rem);
-  }
-
-  .hero .kicker { color: var(--sunset-haze); }
-
-  .hero h1 { margin: var(--space-2) 0 var(--space-3); max-width: 14ch; }
-
-  .hero .lede { color: rgba(250,244,232,.9); margin-bottom: var(--space-4); }
-
-  .hero-ctas { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-
-  /* big low sun */
-  .hero-sun {
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    bottom: -6vw;
-    width: clamp(280px, 52vw, 640px);
-    aspect-ratio: 1;
-    transform: translateX(12%);
-    border-radius: 50%;
-    background: radial-gradient(circle,
-      rgba(250,244,232,.95) 0%,
-      rgba(247,201,139,.85) 34%,
-      rgba(244,163,67,.45) 60%,
-      rgba(244,163,67,0) 72%);
-    filter: blur(2px);
-  }
-
-  /* horizon line art strip */
-  .hero-art {
-    position: absolute;
-    z-index: 2;
-    left: 0; right: 0; bottom: -2px;
-    pointer-events: none;
-  }
-  .hero-art svg { width: 100%; height: auto; }
-
-  /* ---------- Sections ---------- */
-  section { padding: var(--space-6) 0; }
-  .section-head { max-width: 60ch; margin-bottom: var(--space-4); }
-  .section-head .kicker { color: var(--sunset-ember); }
-  .section-head h2 { margin: .5rem 0 .75rem; }
-  .section-head p { color: var(--ink-soft); font-size: 1.08rem; }
-
-  /* ---------- Item grid ---------- */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
-  }
-  @media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); gap: var(--space-4); } }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    background: var(--card);
-    border: 1px solid var(--dust);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-1);
-    overflow: hidden;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-2);
-  }
-
-  .card-art {
-    background: linear-gradient(180deg, var(--sunset-plum), var(--sunset-ember) 55%, var(--sunset-gold));
-    padding: var(--space-3) var(--space-3) 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    min-height: 168px;
-  }
-  .card-art svg { width: 78%; height: auto; }
-
-  .card-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: var(--space-3);
-    gap: var(--space-2);
-  }
-
-  .card-top {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: var(--space-2);
-  }
-
-  .price {
-    font-weight: 800;
-    font-size: 1.3rem;
-    color: var(--sunset-ember);
-    white-space: nowrap;
-  }
-
-  .card p { color: var(--ink-soft); font-size: .97rem; }
-
-  .card .specs {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .45rem;
-  }
-  .card .specs li {
-    font-size: .78rem;
-    font-weight: 650;
-    color: var(--ink);
-    background: var(--sand);
-    border: 1px solid var(--dust);
-    border-radius: 999px;
-    padding: .28em .85em;
-    white-space: nowrap;
-  }
-
-  .card .btn { margin-top: auto; align-self: flex-start; }
-
-  .card-wide { grid-column: 1 / -1; }
-  @media (min-width: 640px) {
-    .card-wide { flex-direction: row; }
-    .card-wide .card-art { min-height: 0; width: 42%; padding: var(--space-3); align-items: center; }
-    .card-wide .card-art svg { width: 88%; }
-    .card-wide .card-body { width: 58%; padding: var(--space-4); }
-  }
-
-  /* ---------- Barn ---------- */
-  .barn {
-    background: var(--sunset-deep);
-    color: var(--bone);
-    position: relative;
-    overflow: hidden;
-  }
-  .barn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(60% 90% at 85% 110%, rgba(232,98,44,.35), transparent 70%),
-      radial-gradient(50% 70% at 8% -10%, rgba(91,29,78,.8), transparent 70%);
-    pointer-events: none;
-  }
-  .barn .wrap { position: relative; z-index: 1; }
-  .barn .kicker { color: var(--sunset-gold); }
-  .barn h2 { margin: .5rem 0 var(--space-2); }
-  .barn .lede { color: rgba(250,244,232,.85); max-width: 52ch; margin-bottom: var(--space-3); }
-
-  .barn-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .6rem;
-    margin-bottom: var(--space-4);
-    max-width: 46rem;
-  }
-  .barn-list li {
-    font-size: .92rem;
-    font-weight: 650;
-    padding: .45em 1.1em;
-    border-radius: 999px;
-    background: rgba(250,244,232,.08);
-    border: 1px solid rgba(250,244,232,.28);
-    transition: background .18s ease, border-color .18s ease;
-  }
-  .barn-list li:hover {
-    background: rgba(232,98,44,.3);
-    border-color: var(--sunset-gold);
-  }
-
-  .barn-grid {
-    display: grid;
-    gap: var(--space-4);
-    align-items: center;
-  }
-  @media (min-width: 900px) {
-    .barn-grid { grid-template-columns: 1.15fr .85fr; }
-  }
-  .barn-art svg { width: min(420px, 88%); margin-inline: auto; }
-
-  /* ---------- Logistics ---------- */
-  .logistics-grid {
-    display: grid;
-    gap: var(--space-3);
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 780px) { .logistics-grid { grid-template-columns: repeat(3, 1fr); } }
-
-  .fact {
-    background: var(--card);
-    border: 1px solid var(--dust);
-    border-radius: var(--radius);
-    padding: var(--space-3);
-    box-shadow: var(--shadow-1);
-  }
-  .fact h3 { margin-bottom: .5rem; font-size: 1.1rem; }
-  .fact p { color: var(--ink-soft); font-size: .96rem; }
-  .fact .fact-icon {
-    width: 2.4rem; height: 2.4rem;
-    margin-bottom: var(--space-2);
-    color: var(--sunset-ember);
-  }
-
-  /* ---------- Final CTA band ---------- */
-  .cta-band {
-    color: var(--bone);
-    text-align: center;
-    background:
-      linear-gradient(180deg,
-        var(--sunset-plum) 0%,
-        var(--sunset-ember) 45%,
-        var(--sunset-orange) 78%,
-        var(--sunset-gold) 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-band .wrap { position: relative; z-index: 1; }
-  .cta-band h2 { max-width: 20ch; margin: .5rem auto var(--space-2); }
-  .cta-band p { color: rgba(250,244,232,.92); max-width: 46ch; margin: 0 auto var(--space-4); font-size: 1.1rem; }
-  .cta-band .kicker { color: var(--sunset-haze); }
-  .cta-sun {
-    position: absolute;
-    left: 50%; bottom: -30%;
-    width: min(70vw, 560px);
-    aspect-ratio: 1;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(250,244,232,.5), rgba(250,244,232,0) 70%);
-    pointer-events: none;
-  }
-
-  /* ---------- Footer ---------- */
-  footer {
-    background: var(--sunset-deep);
-    color: rgba(250,244,232,.65);
-    font-size: .88rem;
-    padding: var(--space-4) 0;
-    text-align: center;
-  }
-  footer a { color: var(--sunset-gold); text-decoration: none; }
-  footer a:hover { text-decoration: underline; }
-
-  /* line-art stroke style: hand-drawn feel */
-  .sketch {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { transition: none !important; }
-    html { scroll-behavior: auto; }
-  }
-.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .anchors { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .santa-aside { grid-template-columns: 1fr; text-align: center; }
+  .santa-aside .polaroid { margin: 0 auto; }
+}
+@media (max-width: 700px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; padding-top: 36px; }
+  .hero .kicker-line { letter-spacing: 0.2em; }
+  .hero p.pitch { margin-left: auto; margin-right: auto; }
+  .hero-photo { max-width: 280px; margin-top: 26px; }
+  .hero .btn { margin-right: 6px; }
+  .barn-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 14px; }
+  .barn-card .tag { font-size: 0.82rem; top: 18px; }
+  section { padding: 44px 0; }
+}
+@media (max-width: 420px) {
+  .steps { grid-template-columns: 1fr; }
+  .wrap { padding: 0 14px; }
+  .anchor-card .tag { font-size: 1.1rem; }
+  .polaroid { padding: 9px 9px 10px; }
+}
 </style>
 </head>
 <body>
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <div class="hero-sun" aria-hidden="true"></div>
-
-  <div class="wrap hero-inner">
-    <span class="kicker">Griff's burn gear sale · Aug 10-23</span>
-    <h1>The playa called. It wants this gear back out there.</h1>
-    <p class="lede">ShiftPods, connection tunnels, a 30ft geodesic dome, and a whole barn of camp gear. Stored indoors, priced to move, sold in person.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#gear">See the gear</a>
-      <a class="btn btn-ghost" href="#contact">Message Griff</a>
+  <div class="lights" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="hero-inner">
+    <div>
+      <p class="kicker-line">Rochester, WA &middot; Aug 10 to 23 &middot; Cash or Crypto</p>
+      <h1>Santa is giving <em>the barn</em> away.</h1>
+      <p class="pitch">
+        Santa is Griff on the playa. Fifteen years of burns, one very full barn in
+        Rochester, WA: ShiftPods, a 30ft dome, burner bikes, water, coolers, sound.
+        Most of it has done 2 or 3 burns and everything works. Come dig through it.
+      </p>
+      <a class="btn btn-red" href="https://t.me/GriffGreen" target="_blank" rel="noopener">Message Santa on Telegram</a>
+      <a class="btn btn-ghost" href="#barn">Dig through the barn</a>
+    </div>
+    <div class="hero-photo">
+      <div class="polaroid tilt-r">
+        <img src="img/santa.jpg" alt="Close-up of the dusty blow-mold Santa figure in the barn">
+        <div class="cap">the big guy himself, resting up for the burn</div>
+      </div>
     </div>
   </div>
-
-  <!-- horizon: shiftpod + dome silhouettes, hand-drawn line art -->
-  <div class="hero-art" aria-hidden="true">
-    <svg viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice">
-      <!-- dusty ground -->
-      <path d="M0 205 Q 240 196 480 203 T 960 201 T 1440 204 L1440 240 L0 240 Z" fill="#f2e7d5"/>
-      <path class="sketch" d="M0 205 Q 240 196 480 203 T 960 201 T 1440 204" stroke="#33241f" stroke-width="3"/>
-      <!-- shiftpod silhouette, left -->
-      <g class="sketch" stroke="#faf4e8" stroke-width="3.5">
-        <path d="M300 203 C 302 152 336 118 388 116 C 440 118 474 152 476 203" fill="rgba(43,16,41,.35)"/>
-        <path d="M330 203 C 338 165 360 146 388 145 C 416 146 438 165 446 203"/>
-        <path d="M388 145 L 388 203"/>
-        <path d="M311 186 Q 388 173 465 186"/>
-      </g>
-      <!-- geodesic dome silhouette, right -->
-      <g class="sketch" stroke="#faf4e8" stroke-width="3">
-        <path d="M880 201 A 155 155 0 0 1 1190 201" fill="rgba(43,16,41,.35)"/>
-        <path d="M918 201 L 972 118 L 1035 74 L 1098 118 L 1152 201"/>
-        <path d="M880 201 L 972 118 L 1035 201 L 1098 118 L 1190 201"/>
-        <path d="M972 118 L 1098 118"/>
-        <path d="M918 201 L 1035 74 L 1152 201"/>
-      </g>
-      <!-- little dust swirls -->
-      <g class="sketch" stroke="#e3d3ba" stroke-width="2.5" opacity=".8">
-        <path d="M120 190 q 22 -12 44 0 q 18 10 36 -2"/>
-        <path d="M640 194 q 18 -10 36 0 q 16 9 32 -2"/>
-        <path d="M1270 192 q 20 -11 40 0"/>
-      </g>
-    </svg>
-  </div>
+  <div class="horizon" aria-hidden="true"></div>
 </header>
 
-<main>
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>HO HO WHOA &middot; EVERYTHING MUST GO TO THE PLAYA &middot; SANTA GIVETH &middot; COME DIG THROUGH THE BARN &middot;</span><span>HO HO WHOA &middot; EVERYTHING MUST GO TO THE PLAYA &middot; SANTA GIVETH &middot; COME DIG THROUGH THE BARN &middot;</span>
+  </div>
+</div>
 
-<!-- ================= GEAR ================= -->
-<section id="gear">
+<!-- ================= ANCHOR LISTINGS ================= -->
+<section id="anchors">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">The listings</span>
-      <h2>Shelter for your next burn</h2>
-      <p>Every card links to its Facebook Marketplace listing. Message there, then come see the gear with your own eyes. No checkout here, on purpose.</p>
+      <div class="kicker">from Santa's workshop floor</div>
+      <h2>The Big Four</h2>
+      <p class="sub">The headliners. Each one is up on Facebook Marketplace, or just <a href="https://t.me/GriffGreen" target="_blank" rel="noopener">message Santa directly</a>.</p>
     </div>
+    <div class="anchors">
 
-    <div class="grid">
+      <div class="anchor-card">
+        <span class="tag">$900</span>
+        <div class="photo"><img src="img/sp2.jpg" alt="A set-up ShiftPod 2 with a stack of mattresses inside"></div>
+        <div class="body">
+          <h3>ShiftPod 2</h3>
+          <p>The 12x12 classic burn shelter. Reflective shell, AC ports, sets up in minutes.
+             Most have seen 2 or 3 burns. About 70 lbs. Multiple available, first come first served.</p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="https://www.facebook.com/marketplace/item/1797411361445425" target="_blank" rel="noopener">View on Marketplace</a>
+          </div>
+        </div>
+      </div>
 
-      <!-- ShiftPod 2 -->
-      <article class="card">
-        <div class="card-art" aria-hidden="true">
-          <svg viewBox="0 0 220 120" class="sketch" stroke="#faf4e8" stroke-width="3">
-            <path d="M20 112 C 22 55 60 20 110 18 C 160 20 198 55 200 112" fill="rgba(43,16,41,.25)"/>
-            <path d="M52 112 C 60 70 82 48 110 47 C 138 48 160 70 168 112"/>
-            <path d="M110 47 L 110 112"/>
-            <path d="M31 92 Q 110 78 189 92"/>
-            <path d="M14 112 H 206" stroke-width="3.5"/>
+      <div class="anchor-card">
+        <span class="tag">$400</span>
+        <div class="photo"><img src="img/mini.jpg" alt="A ShiftPod Mini set up with coolers in front"></div>
+        <div class="body">
+          <h3>ShiftPod Mini</h3>
+          <p>Little sibling of the SP2. Zippable floor, rain fly, 2018 and 2019 stock.
+             Perfect starter pod, or the guest room your camp keeps promising people.</p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="https://www.facebook.com/marketplace/item/1520103276005791" target="_blank" rel="noopener">View on Marketplace</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="anchor-card">
+        <span class="tag">$100</span>
+        <div class="photo">
+          <svg viewBox="0 0 400 260" role="img" aria-label="Sketch of two pods joined by a connection tunnel" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#d9bd93"/>
+            <g stroke="#5a3a24" stroke-width="4" fill="#f6ecd9">
+              <path d="M40 200 L60 110 Q100 70 140 110 L160 200 Z"/>
+              <path d="M240 200 L260 110 Q300 70 340 110 L360 200 Z"/>
+              <path d="M160 200 Q160 150 200 150 Q240 150 240 200 Z" fill="#e8bc6a"/>
+            </g>
+            <text x="200" y="238" text-anchor="middle" font-size="20" fill="#5a3a24" font-family="Segoe Print, cursive">two pods, one hallway</text>
           </svg>
         </div>
-        <div class="card-body">
-          <div class="card-top">
-            <h3>ShiftPod 2</h3>
-            <span class="price">$900</span>
+        <div class="body">
+          <h3>SP2 Connection Tunnels</h3>
+          <p>Zip two pods into one compound. The camp upgrade nobody regrets.
+             Small enough to ship, so this one can come to you.</p>
+          <p style="font-size: 0.82rem; font-family: var(--hand);">real photos on the Marketplace listing</p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="https://www.facebook.com/marketplace/item/2590038988079173" target="_blank" rel="noopener">View on Marketplace</a>
           </div>
-          <p>The classic Burning Man shelter. 12x12 with room to stand, AC ports, and a reflective shell that laughs at the afternoon sun. Stored indoors, most have seen 2-3 burns. Multiple available, so come pick yours in person.</p>
-          <ul class="specs">
-            <li>12x12 ft</li>
-            <li>~70 lbs</li>
-            <li>Packs to 76in x 14in</li>
-            <li>Multiple available</li>
-          </ul>
-          <a class="btn btn-dark" href="TODO-SP2-LINK">View on Marketplace</a>
         </div>
-      </article>
+      </div>
 
-      <!-- ShiftPod Mini -->
-      <article class="card">
-        <div class="card-art" aria-hidden="true">
-          <svg viewBox="0 0 220 120" class="sketch" stroke="#faf4e8" stroke-width="3">
-            <path d="M52 112 C 54 72 78 48 110 46 C 142 48 166 72 168 112" fill="rgba(43,16,41,.25)"/>
-            <path d="M74 112 C 80 84 94 68 110 67 C 126 68 140 84 146 112"/>
-            <path d="M110 67 L 110 112"/>
-            <path d="M60 98 Q 110 89 160 98"/>
-            <path d="M14 112 H 206" stroke-width="3.5"/>
-            <path d="M182 60 q 10 -6 20 0" stroke="#f4a343" stroke-width="2.5"/>
-            <path d="M22 52 q 9 -5 18 0" stroke="#f4a343" stroke-width="2.5"/>
+      <div class="anchor-card">
+        <span class="tag">$8,000</span>
+        <div class="photo">
+          <svg viewBox="0 0 400 260" role="img" aria-label="Sketch of a 30 foot geodesic dome" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="260" fill="#d9bd93"/>
+            <g stroke="#5a3a24" stroke-width="3" fill="none">
+              <path d="M60 210 A140 140 0 0 1 340 210"/>
+              <path d="M60 210 L130 120 L200 70 L270 120 L340 210"/>
+              <path d="M130 120 L200 210 L270 120"/>
+              <path d="M100 160 L200 70 L300 160"/>
+              <path d="M100 160 L130 210 M300 160 L270 210 M100 160 L200 210 L300 160"/>
+              <line x1="40" y1="210" x2="360" y2="210" stroke-width="4"/>
+            </g>
+            <text x="200" y="243" text-anchor="middle" font-size="20" fill="#5a3a24" font-family="Segoe Print, cursive">680 sq ft of shade church</text>
           </svg>
         </div>
-        <div class="card-body">
-          <div class="card-top">
-            <h3>ShiftPod Mini</h3>
-            <span class="price">$400</span>
+        <div class="body">
+          <h3>30ft Geodesic Dome</h3>
+          <p>16 feet tall, roughly 680 square feet. A whole camp lives under this thing.
+             Currently in Santa Cruz, and playa delivery is possible.</p>
+          <p style="font-size: 0.82rem; font-family: var(--hand);">real photos on the Marketplace listing</p>
+          <div class="cta-row">
+            <a class="btn btn-red" href="https://www.facebook.com/marketplace/item/4512171489103557/" target="_blank" rel="noopener">View on Marketplace</a>
           </div>
-          <p>Same idea, smaller footprint, easier on the wallet. Zippable floor you can run an AC hose through, rain fly included. 2018/2019 stock in great shape.</p>
-          <ul class="specs">
-            <li>Zippable floor</li>
-            <li>AC hose friendly</li>
-            <li>Rain fly included</li>
-            <li>2018/2019 stock</li>
-          </ul>
-          <a class="btn btn-dark" href="TODO-MINI-LINK">View on Marketplace</a>
         </div>
-      </article>
+      </div>
 
-      <!-- Tunnels -->
-      <article class="card">
-        <div class="card-art" aria-hidden="true">
-          <svg viewBox="0 0 220 120" class="sketch" stroke="#faf4e8" stroke-width="3">
-            <path d="M8 112 C 9 78 30 58 58 57 C 86 58 106 78 108 112" fill="rgba(43,16,41,.25)"/>
-            <path d="M112 112 C 113 78 134 58 162 57 C 190 58 210 78 212 112" fill="rgba(43,16,41,.25)"/>
-            <path d="M82 112 C 84 95 96 86 110 86 C 124 86 136 95 138 112" fill="rgba(43,16,41,.35)"/>
-            <path d="M88 98 Q 110 92 132 98"/>
-            <path d="M2 112 H 218" stroke-width="3.5"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-top">
-            <h3>SP2 Connection Tunnels</h3>
-            <span class="price">$100</span>
-          </div>
-          <p>Zip two ShiftPods together and suddenly your camp has a hallway. Instant oasis, zero dust lock between pods. These can ship.</p>
-          <ul class="specs">
-            <li>Joins two SP2s</li>
-            <li>Can ship</li>
-          </ul>
-          <a class="btn btn-dark" href="TODO-TUNNELS-LINK">View on Marketplace</a>
-        </div>
-      </article>
+    </div>
+  </div>
+</section>
 
-      <!-- Dome, featured wide card -->
-      <article class="card card-wide">
-        <div class="card-art" aria-hidden="true">
-          <svg viewBox="0 0 320 170" class="sketch" stroke="#faf4e8" stroke-width="3">
-            <path d="M20 158 A 140 140 0 0 1 300 158" fill="rgba(43,16,41,.25)"/>
-            <path d="M55 158 L 105 83 L 160 44 L 215 83 L 265 158"/>
-            <path d="M20 158 L 105 83 L 160 158 L 215 83 L 300 158"/>
-            <path d="M105 83 L 215 83"/>
-            <path d="M55 158 L 160 44 L 265 158"/>
-            <path d="M87 158 L 160 100 L 233 158"/>
-            <path d="M10 158 H 310" stroke-width="3.5"/>
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-top">
-            <h3>30ft Geodesic Dome</h3>
-            <span class="price">$8,000</span>
-          </div>
-          <p>The camp centerpiece. 30ft across, 16ft tall, roughly 680 sq ft of livable shade for your whole crew. Located in Santa Cruz, and yes, it can be delivered on playa.</p>
-          <ul class="specs">
-            <li>30ft diameter</li>
-            <li>16ft tall</li>
-            <li>~680 sq ft shade</li>
-            <li>Santa Cruz</li>
-            <li>Playa delivery possible</li>
-          </ul>
-          <a class="btn btn-primary" href="https://www.facebook.com/marketplace/item/4512171489103557/">View on Marketplace</a>
-        </div>
-      </article>
-
+<!-- ================= SANTA ASIDE ================= -->
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="santa-aside">
+      <div class="polaroid tilt-l">
+        <img src="img/trike.jpg" alt="Decorated red playa trike with basket">
+        <div class="cap">the playa trike, ready for its next rider</div>
+      </div>
+      <div>
+        <div class="kicker">why is everything so dusty?</div>
+        <h2>Because it's all real playa gear</h2>
+        <p>Every piece in this barn has been to the burn and back. The dust is the resume.
+           Wipe it down, load it up, and it is ready to go home to Black Rock City with you.</p>
+        <p class="hand-quote">"We're cleaning them dude. They're gonna be great."</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= THE BARN ================= -->
-<section class="barn">
-  <div class="wrap barn-grid">
-    <div>
-      <span class="kicker">Beyond the listings</span>
-      <h2>Then there's the barn.</h2>
-      <p class="lede">A whole barn full of burn gear that never made it to Marketplace. Come dig through it in person. Best finds go to the people who show up.</p>
-      <ul class="barn-list">
-        <li>Carports · $300</li>
-        <li>Sump pumps</li>
-        <li>Trifold mattresses</li>
-        <li>Bikes</li>
-        <li>Sheets</li>
-        <li>And more</li>
-      </ul>
-      <a class="btn btn-primary" href="#contact">Book a barn visit</a>
+<section id="barn" class="wood" style="padding-bottom: 70px;">
+  <div class="lights" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="wrap" style="padding-top: 40px;">
+    <div class="section-head">
+      <div class="kicker" style="color: var(--gold-soft);">everything must go</div>
+      <h2 style="color: var(--cream);">The Barn</h2>
+      <p class="sub" style="color: #ead9ba;">Come dig through it. Tap anything to ask about it. Tagged means the price is set, everything else is make an offer.</p>
     </div>
-    <div class="barn-art" aria-hidden="true">
-      <svg viewBox="0 0 320 220" class="sketch" stroke="#f7c98b" stroke-width="3">
-        <!-- barn -->
-        <path d="M50 200 L 50 110 L 100 62 L 160 45 L 220 62 L 270 110 L 270 200 Z" fill="rgba(250,244,232,.05)"/>
-        <path d="M50 110 L 100 96 L 160 88 L 220 96 L 270 110"/>
-        <path d="M138 200 L 138 138 Q 160 128 182 138 L 182 200"/>
-        <path d="M138 143 L 182 195 M 182 143 L 138 195"/>
-        <path d="M80 156 h 26 v 26 h -26 Z"/>
-        <path d="M214 156 h 26 v 26 h -26 Z"/>
-        <path d="M30 200 H 290" stroke-width="3.5"/>
-        <!-- moon + stars -->
-        <path d="M287 38 a 14 14 0 1 1 -10 -24 a 11 11 0 0 0 10 24" stroke-width="2.5"/>
-        <path d="M40 44 l 3 3 M 43 41 l -3 3 M 232 20 l 3 3 M 235 17 l -3 3" stroke-width="2.5"/>
-        <!-- dust drift -->
-        <path d="M56 214 q 24 -10 48 0 q 22 9 44 -2" stroke-width="2.5" opacity=".6"/>
-        <path d="M190 214 q 20 -9 40 0" stroke-width="2.5" opacity=".6"/>
-      </svg>
+    <div class="barn-grid">
+
+      <div class="cluster-head">Water and cold</div>
+
+      <a class="barn-card" href="#contact">
+        <span class="tag">$3 each</span>
+        <div class="polaroid">
+          <img src="img/water-jugs.jpg" alt="Stacks of 5 gallon water jugs">
+          <div class="cap"><b>5-gal water jugs</b><br>clean on the inside, return them for the deposit and profit</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/drums.jpg" alt="Two 55 gallon water drums">
+          <div class="cap"><b>55-gal water drums</b><br>fill them with our incredible well water before you roll</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/coolers.jpg" alt="A pile of coolers">
+          <div class="cap"><b>Coolers, lots of them</b><br>a whole pile, every size</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <span class="tag">$25</span>
+        <div class="polaroid">
+          <img src="img/fridge.jpg" alt="A fridge in the barn">
+          <div class="cap"><b>Fridge</b><br>$25 now. Free closer to the burn, if it lasts that long</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/freezer.jpg" alt="Custom blue chest freezer">
+          <div class="cap"><b>Chest freezer</b><br>custom blue paint job, one of a kind</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/buckets.jpg" alt="Home Depot buckets">
+          <div class="cap"><b>Home Depot buckets</b><br>5-gallon, a whole stack of them</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/totes.jpg" alt="HDX totes with yellow lids">
+          <div class="cap"><b>HDX totes + bins</b><br>yellow lids, playa-proof storage</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/garbage-cans.jpg" alt="Garbage cans">
+          <div class="cap"><b>Garbage cans</b><br>dusty but really nice. Leave no trace starts here</div>
+        </div>
+      </a>
+
+      <div class="cluster-head">Getting around</div>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/bikes.jpg" alt="A rack full of burner bikes">
+          <div class="cap"><b>Burner bikes, a whole rack</b><br>more get pulled out of the barn as these go</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/bikes2.jpg" alt="More burner bikes leaning in the barn">
+          <div class="cap"><b>More bikes</b><br>seriously, there are a lot of bikes</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/bike-baskets.jpg" alt="Bike baskets and racks">
+          <div class="cap"><b>Bike baskets and racks</b><br>pairs with a bike, people always want these</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/green-cart.jpg" alt="Green garden cart">
+          <div class="cap"><b>Green garden cart</b><br>the green one is really good, Griff's words</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/wagons.jpg" alt="Folding wagons">
+          <div class="cap"><b>Folding wagons</b><br>fold flat for travel</div>
+        </div>
+      </a>
+
+      <div class="cluster-head">Camp comfort</div>
+
+      <a class="barn-card" href="#contact">
+        <span class="tag">$20</span>
+        <div class="polaroid">
+          <img src="img/mattresses.jpg" alt="Trifold and bifold mattresses stacked up">
+          <div class="cap"><b>Folding mattresses</b><br>$20 now. Free closer to the burn, if any survive that long. Early birds pick the good ones</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/folding-chairs.jpg" alt="A big assortment of folding and camp chairs">
+          <div class="cap"><b>Folding + camp chairs</b><br>big assortment, sit down and try them</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/bean-bag.jpg" alt="A big bean bag">
+          <div class="cap"><b>Bean bag</b><br>big and soft, ready for a chill space</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/blue-fabric.jpg" alt="Blue stretchy decor fabric">
+          <div class="cap"><b>Blue fabric</b><br>stretchy decor fabric, a designer friend fought for this</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/igloo.jpg" alt="Inflatable igloo packed in the barn">
+          <div class="cap"><b>Inflatable igloo</b><br>fan situation unclear</div>
+        </div>
+      </a>
+
+      <a class="barn-card note-card" href="#contact">
+        <div class="polaroid">
+          <div class="note-inner">
+            <b>The Hexayurt</b>
+            Built by the guy who invented hexayurts, Vinay Gupta himself.
+            No photo does it justice.
+            <br><br>Ask Santa.
+          </div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <span class="tag">$400</span>
+        <div class="polaroid">
+          <img src="img/carport-poles.jpg" alt="Carport poles bundled in the barn">
+          <div class="cap"><b>Carports (x2)</b><br>the whole kit and caboodle: stakes, ratchet straps, tarps</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/flags.jpg" alt="Flags and marking flags">
+          <div class="cap"><b>Flags + marking flags</b><br>marking flags for laying out camp, big ones for finding it</div>
+        </div>
+      </a>
+
+      <div class="cluster-head">Power, sound and utility</div>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/inverter.jpg" alt="3000 watt inverter">
+          <div class="cap"><b>3000W inverter</b><br>works great. Old batteries probably dead, free with the inverter if you want them</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/sump-pumps.jpg" alt="Several sump pumps">
+          <div class="cap"><b>Sump pumps</b><br>several of them, tested on Rochester rain</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/propane-gas.jpg" alt="Gas cans and propane tanks">
+          <div class="cap"><b>Gas cans + propane tanks</b><br>cans and tanks in various sizes</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/speakers.jpg" alt="EV stage speakers">
+          <div class="cap"><b>EV SH-1502ER stage speakers</b><br>loud enough for a sound camp</div>
+        </div>
+      </a>
+
+      <a class="barn-card" href="#contact">
+        <div class="polaroid">
+          <img src="img/mixer.jpg" alt="Powered mixer and Lexicon MX200 effects unit">
+          <div class="cap"><b>Powered mixer + Lexicon MX200</b><br>powers the speakers, needs a dusting</div>
+        </div>
+      </a>
+
     </div>
+  </div>
+  <div style="text-align:center; padding: 44px 20px 0;">
+    <span style="font-family: var(--hand); color: var(--gold-soft); font-size: 1.05rem;">
+      Extension cords and tools coming soon. The tables are not for sale, do not ask about the tables.
+    </span>
   </div>
 </section>
 
-<!-- ================= LOGISTICS ================= -->
+<!-- ================= HOW PICKUP WORKS ================= -->
 <section id="pickup">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">The deal</span>
-      <h2>Pickup, payment, and why in person</h2>
+      <div class="kicker">no sleigh required</div>
+      <h2>How Pickup Works</h2>
+      <p class="sub">Simple as a gift exchange. Aug 10 to 23, almost any time works.</p>
     </div>
-    <div class="logistics-grid">
-      <div class="fact">
-        <svg class="fact-icon sketch" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
-          <path d="M20 35 C 12 26 7 20 7 14 a 13 13 0 0 1 26 0 c 0 6 -5 12 -13 21 Z"/>
-          <circle cx="20" cy="14" r="4.5"/>
-        </svg>
-        <h3>Rochester, WA</h3>
-        <p>Exact address shared when you book. Too many scammers online, and honestly, Griff wants you to see the gear with your own eyes before money moves.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Message Santa</h3>
+        <p>Telegram or email. Tell him what caught your eye.</p>
       </div>
-      <div class="fact">
-        <svg class="fact-icon sketch" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
-          <circle cx="20" cy="20" r="15"/>
-          <path d="M20 11 L 20 20 L 27 24"/>
-        </svg>
-        <h3>Aug 10-23</h3>
-        <p>Griff can meet almost any time in that window. Pick a slot, roll up, kick the tires, load your rig.</p>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Book a time</h3>
+        <p>Aug 10 to 23, super flexible. Address shared when you book.</p>
       </div>
-      <div class="fact">
-        <svg class="fact-icon sketch" viewBox="0 0 40 40" stroke="currentColor" stroke-width="2.6" aria-hidden="true">
-          <rect x="5" y="12" width="30" height="18" rx="3"/>
-          <path d="M5 19 H 35"/>
-          <path d="M10 25 H 18"/>
-        </svg>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Come to the barn</h3>
+        <p>Rochester, WA. Dig through it, kick the tires, say hi in person.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
         <h3>Cash or crypto</h3>
-        <p>Both spend the same out here. Bring whichever you trust; Griff has been taking crypto since before it was cool.</p>
+        <p>Pay how you like, load up, and roll toward the dust.</p>
       </div>
     </div>
+    <p style="text-align: center; font-family: var(--hand); color: var(--dust-red); font-size: 1.05rem; margin-top: 30px;">
+      The barn closes Aug 23 when Santa packs for the playa. After that, it's gone.
+    </p>
   </div>
 </section>
 
-</main>
-
-<!-- ================= FINAL CTA ================= -->
-<section class="cta-band" id="contact">
-  <div class="cta-sun" aria-hidden="true"></div>
-  <div class="wrap">
-    <span class="kicker">Last call before the dust flies</span>
-    <h2>Come get this gear back on the playa.</h2>
-    <p>Message Griff, book a barn pickup in Rochester, WA between Aug 10 and 23, and come talk gear in person.</p>
-    <div class="cta-buttons">
-      <a class="btn btn-dark" href="https://t.me/GriffGreen">Telegram</a>
-      <a class="btn btn-dark" href="TODO-FB-PROFILE-LINK">Facebook</a>
-      <a class="btn btn-dark" href="mailto:griff@giveth.io">Email</a>
+<!-- ================= CONTACT / FOOTER ================= -->
+<footer id="contact" class="wood">
+  <div class="lights" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+  <div class="contact-inner">
+    <div class="kicker" style="color: var(--gold-soft);">the nice list is real</div>
+    <h2>Talk to Santa</h2>
+    <p>Fastest way is Telegram. Tell him what you want and when you can swing by the barn.
+       Gear this good does not sit around until the burn.</p>
+    <div class="contact-btns">
+      <a class="btn btn-red" href="https://t.me/GriffGreen" target="_blank" rel="noopener">Telegram: @GriffGreen</a>
+      <a class="btn btn-kraft" href="mailto:griff@giveth.io">Email: griff@giveth.io</a>
     </div>
   </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <p>Sold by Griff, one burner to another. Every item links to its <a href="#gear">Marketplace listing</a>. No checkout, no shipping labels (except the tunnels), no corporate anything.</p>
+  <div class="fineprint">
+    Rochester, WA · Aug 10 to 23 · cash or crypto · playa dust included, no extra charge
   </div>
 </footer>
+
+<!-- sticky Telegram pill, shows once the hero scrolls out of view -->
+<a id="santa-pill" class="sticky-santa" href="https://t.me/GriffGreen" target="_blank" rel="noopener">Talk to Santa</a>
+<script>
+(function () {
+  var pill = document.getElementById('santa-pill');
+  var hero = document.querySelector('header.hero');
+  if (!pill || !hero) return;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      pill.classList.toggle('show', !entries[0].isIntersecting);
+    }).observe(hero);
+  } else {
+    pill.classList.add('show');
+  }
+})();
+</script>
 
 </body>
 </html>
