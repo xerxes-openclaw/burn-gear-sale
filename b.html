@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santa's Burn Gear Sale · Rochester, WA</title>
+<meta name="description" content="Santa (Griff) is clearing the barn before the burn. ShiftPods, a 30ft dome, bikes, water, coolers and more. Rochester WA pickup, Aug 10-23. Cash or crypto.">
+<style>
+/* Desert Noel: playa sunset editorial with a Santa-red thread. No external anything. */
+:root{
+  --dusk:#241a33;          /* deep dusk purple */
+  --dusk-2:#2f2242;
+  --rose:#d9a89e;          /* dusty rose */
+  --rose-deep:#b97f74;
+  --ember:#c96f3b;         /* burnt orange */
+  --ember-bright:#e08a4a;
+  --santa:#b23230;         /* deep santa red */
+  --santa-bright:#d24a42;
+  --snow:#faf6ef;          /* snow white / cream */
+  --sand:#efe6d8;
+  --ink:#33283f;
+  --ink-soft:#6b5d70;
+  --rule:#d8c9bb;
+  --serif:Georgia,'Iowan Old Style','Times New Roman',serif;
+  --sans:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--snow);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+
+/* ---------- small shared bits ---------- */
+.eyebrow{
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ember);font-weight:600;
+}
+.section-head{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;margin-bottom:8px;
+}
+.section-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:.01em;
+}
+.section-head .note{font-size:.85rem;color:var(--ink-soft);font-style:italic}
+.thin-rule{border:0;border-top:1px solid var(--rule);margin:14px 0 34px}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,.65) 50%, transparent 51%),
+    radial-gradient(1px 1px at 26% 9%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 38% 24%, rgba(255,240,220,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 55% 12%, rgba(255,255,255,.55) 50%, transparent 51%),
+    radial-gradient(2px 2px at 68% 20%, rgba(255,235,210,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 79% 8%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 90% 26%, rgba(255,255,255,.45) 50%, transparent 51%),
+    radial-gradient(1px 1px at 47% 30%, rgba(255,255,255,.35) 50%, transparent 51%),
+    radial-gradient(1px 1px at 7% 34%, rgba(255,255,255,.3) 50%, transparent 51%),
+    linear-gradient(180deg, var(--dusk) 0%, var(--dusk-2) 42%, #5a3a52 74%, #a75b4a 92%, var(--ember) 100%);
+  color:var(--snow);
+  text-align:center;
+  padding:84px 22px 0;
+}
+.hero .kicker{
+  font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:22px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.5rem,8vw,4.8rem);
+  line-height:1.05;letter-spacing:.005em;
+  max-width:16ch;margin:0 auto;
+}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero .elwire{
+  width:min(340px,70%);height:2px;margin:30px auto 26px;border:0;
+  background:linear-gradient(90deg,transparent,var(--ember-bright) 20%,var(--santa-bright) 50%,var(--ember-bright) 80%,transparent);
+  box-shadow:0 0 8px 1px rgba(224,138,74,.8),0 0 22px 4px rgba(210,74,66,.35);
+  border-radius:2px;
+}
+.hero .pitch{
+  max-width:52ch;margin:0 auto;font-size:1.05rem;color:#efe3e6;
+}
+.hero .facts{
+  display:flex;justify-content:center;gap:10px 28px;flex-wrap:wrap;
+  margin:30px auto 40px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sand);
+}
+.hero .facts span{display:inline-flex;align-items:center;gap:9px}
+.hero .facts b{color:var(--ember-bright);font-weight:400}
+.hero .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding-bottom:74px}
+.btn{
+  display:inline-block;text-decoration:none;font-size:.85rem;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  padding:13px 26px;border-radius:2px;transition:transform .15s ease,box-shadow .15s ease;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-red{background:var(--santa);color:var(--snow);box-shadow:0 6px 18px rgba(178,50,48,.4)}
+.btn-ghost{border:1px solid rgba(250,246,239,.45);color:var(--snow)}
+.btn-ghost:hover{border-color:var(--rose)}
+/* playa horizon at the base of the hero */
+.hero .horizon{
+  height:56px;margin:0 -22px;
+  background:linear-gradient(180deg,transparent 0%,rgba(36,26,51,.18) 100%);
+  border-bottom:6px solid var(--dusk);
+  clip-path:polygon(0 62%,9% 55%,18% 64%,30% 50%,41% 62%,52% 46%,63% 60%,74% 50%,85% 62%,93% 54%,100% 62%,100% 100%,0 100%);
+  background-color:rgba(36,26,51,.55);
+}
+
+/* ---------- ornament rope divider ---------- */
+.ornaments{
+  background:var(--snow);
+  padding:0 0 8px;
+}
+.ornaments .rope{
+  height:3px;
+  background:repeating-linear-gradient(90deg,#9c7a58 0 8px,#b3926e 8px 16px);
+  border-radius:2px;opacity:.75;
+}
+.ornaments .row{
+  display:flex;justify-content:space-around;
+  max-width:760px;margin:0 auto;padding:0 30px;
+}
+.bauble{position:relative;width:22px;display:flex;flex-direction:column;align-items:center}
+.bauble::before{content:"";width:1px;background:#9c7a58;opacity:.7}
+.bauble::after{
+  content:"";width:18px;height:18px;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, rgba(255,255,255,.85) 0 12%, transparent 40%),var(--c,#b23230);
+  box-shadow:0 2px 6px rgba(51,40,63,.25);
+}
+.bauble:nth-child(1){--c:var(--santa)}    .bauble:nth-child(1)::before{height:16px}
+.bauble:nth-child(2){--c:var(--ember)}    .bauble:nth-child(2)::before{height:30px}
+.bauble:nth-child(3){--c:var(--rose-deep)}.bauble:nth-child(3)::before{height:12px}
+.bauble:nth-child(4){--c:var(--dusk-2)}   .bauble:nth-child(4)::before{height:24px}
+.bauble:nth-child(5){--c:var(--santa)}    .bauble:nth-child(5)::before{height:18px}
+.bauble:nth-child(6){--c:var(--ember-bright)}.bauble:nth-child(6)::before{height:34px}
+.bauble:nth-child(7){--c:var(--rose-deep)}.bauble:nth-child(7)::before{height:14px}
+.bauble:nth-child(8){--c:var(--santa)}    .bauble:nth-child(8)::before{height:26px}
+@media(max-width:520px){.bauble:nth-child(even){display:none}}
+
+/* ---------- anchor listings ---------- */
+.anchors{padding:64px 0 30px}
+.listing{
+  display:grid;grid-template-columns:64px minmax(0,1fr) auto;
+  gap:10px 26px;align-items:center;
+  padding:30px 6px;border-bottom:1px solid var(--rule);
+  text-decoration:none;transition:background .18s ease;
+}
+.listing:first-of-type{border-top:1px solid var(--rule)}
+.listing:hover{background:rgba(217,168,158,.12)}
+.listing .num{
+  font-family:var(--serif);font-size:1.5rem;color:var(--rose-deep);
+  font-style:italic;
+}
+.listing h3{
+  font-family:var(--serif);font-weight:400;font-size:clamp(1.35rem,3vw,1.9rem);
+  line-height:1.15;
+}
+.listing p{color:var(--ink-soft);font-size:.94rem;max-width:56ch;margin-top:5px}
+.listing .go{
+  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--santa);
+  font-weight:600;margin-top:9px;display:inline-block;
+}
+.listing:hover .go{text-decoration:underline}
+.listing .price{
+  font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.2rem);
+  color:var(--santa);white-space:nowrap;text-align:right;
+}
+.listing .thumb{
+  grid-row:span 1;width:92px;height:118px;object-fit:cover;
+  border:1px solid var(--rule);padding:0;background:#fff;
+  filter:sepia(.14) saturate(1.06) contrast(1.02);
+  box-shadow:0 4px 14px rgba(51,40,63,.12);
+}
+.listing .cell{min-width:0}
+@media(max-width:640px){
+  .listing{grid-template-columns:minmax(0,1fr) auto;padding:24px 2px}
+  .listing .num{display:none}
+  .listing .thumb{width:70px;height:90px}
+}
+
+/* ---------- barn grid ---------- */
+.barn{padding:64px 0 40px}
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));
+  gap:30px 24px;margin-top:36px;
+}
+.card{
+  text-decoration:none;display:flex;flex-direction:column;
+  transition:transform .18s ease;
+}
+.card:hover{transform:translateY(-3px)}
+.card .ph{
+  border:1px solid var(--rule);background:#fff;padding:9px 9px 0;
+  box-shadow:0 5px 16px rgba(51,40,63,.1);
+}
+.card .ph img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;
+  filter:sepia(.16) saturate(1.07) contrast(1.03) brightness(1.02);
+}
+.card .ph .dust{
+  font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rose-deep);text-align:center;padding:7px 0 8px;
+}
+.card h4{
+  font-family:var(--serif);font-weight:400;font-size:1.12rem;line-height:1.25;
+  margin:13px 0 3px;
+}
+.card .blurb{font-size:.85rem;color:var(--ink-soft)}
+.card .tagline{
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+  margin-top:9px;border-top:1px solid var(--rule);padding-top:8px;
+}
+.card .p{font-family:var(--serif);font-size:1.05rem;color:var(--santa)}
+.card .ask{font-family:var(--serif);font-size:1rem;color:var(--ember);font-style:italic}
+.card .claim{
+  font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.card:hover .claim{color:var(--santa)}
+/* typographic card for the hexayurt (no clean photo) */
+.card-text .ph{
+  aspect-ratio:auto;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;padding:22px 16px;gap:12px;
+  background:linear-gradient(160deg,var(--dusk) 0%,var(--dusk-2) 70%,#4a3352 100%);
+  border:1px solid var(--dusk);color:var(--snow);flex:0 0 auto;min-height:0;
+}
+.card-text .hex{
+  width:54px;height:60px;background:var(--rose);
+  clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+  opacity:.85;
+}
+.card-text .ph p{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--sand)}
+@media(max-width:460px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}}
+
+/* santa wink */
+.wink{
+  display:flex;gap:26px;align-items:center;justify-content:center;
+  margin:64px auto 0;max-width:640px;flex-wrap:wrap;
+}
+.wink .polaroid{
+  background:#fff;padding:10px 10px 14px;border:1px solid var(--rule);
+  transform:rotate(-3deg);box-shadow:0 8px 22px rgba(51,40,63,.18);
+  width:170px;flex:0 0 auto;
+}
+.wink .polaroid img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:sepia(.12) saturate(1.05)}
+.wink .polaroid figcaption{
+  font-family:var(--serif);font-style:italic;text-align:center;
+  font-size:.8rem;color:var(--ink-soft);padding-top:8px;
+}
+.wink blockquote{
+  font-family:var(--serif);font-style:italic;font-size:1.15rem;
+  color:var(--ink);max-width:30ch;line-height:1.5;
+}
+.wink blockquote span{color:var(--santa)}
+
+/* ---------- pickup ---------- */
+.pickup{
+  background:linear-gradient(180deg,var(--sand) 0%,#e7d8c6 100%);
+  padding:70px 0 76px;margin-top:70px;
+}
+.steps{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:30px;margin-top:40px;
+}
+.step{border-top:2px solid var(--santa);padding-top:16px}
+.step .n{
+  font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--ember);
+}
+.step h3{font-family:var(--serif);font-weight:400;font-size:1.25rem;margin:6px 0 8px}
+.step p{font-size:.92rem;color:#5c4f52}
+.pickup .fine{
+  margin-top:38px;font-size:.85rem;color:#6d5c55;font-style:italic;
+  border-left:2px solid var(--rose-deep);padding-left:14px;max-width:60ch;
+}
+@media(max-width:700px){.steps{grid-template-columns:1fr;gap:24px}}
+
+/* ---------- contact / footer ---------- */
+.contact{
+  position:relative;
+  background:
+    radial-gradient(1.5px 1.5px at 15% 22%, rgba(255,255,255,.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 33% 60%, rgba(255,255,255,.4) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 58% 18%, rgba(255,240,220,.45) 50%, transparent 51%),
+    radial-gradient(1px 1px at 72% 48%, rgba(255,255,255,.4) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 88% 30%, rgba(255,255,255,.4) 50%, transparent 51%),
+    radial-gradient(1px 1px at 44% 36%, rgba(255,255,255,.3) 50%, transparent 51%),
+    linear-gradient(180deg,var(--dusk) 0%,var(--dusk-2) 100%);
+  color:var(--snow);text-align:center;padding:80px 22px 30px;
+}
+.contact h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(1.9rem,5vw,3rem);max-width:22ch;margin:0 auto;
+}
+.contact h2 em{color:var(--rose);font-style:italic}
+.contact .sub{color:var(--sand);margin:16px auto 34px;max-width:46ch;font-size:1rem}
+.contact .cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.contact .addr{
+  margin-top:44px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--rose);opacity:.9;
+}
+.footer-rule{
+  width:min(340px,70%);height:1px;margin:44px auto 22px;border:0;
+  background:linear-gradient(90deg,transparent,var(--rose-deep),transparent);
+}
+.colophon{font-size:.75rem;color:#a393ad;padding-bottom:6px}
+.colophon a{color:var(--rose);text-decoration:none}
+.colophon a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <p class="kicker">Rochester, WA &nbsp;&middot;&nbsp; Aug 10 to 23 &nbsp;&middot;&nbsp; Cash or Crypto</p>
+  <h1>Santa is giving <em>the barn</em> away.</h1>
+  <hr class="elwire">
+  <p class="pitch">
+    On playa they call Griff "Santa". Before this burn, the sleigh gets unloaded:
+    ShiftPods, a 30ft dome, burner bikes, water, coolers, sound. It is all real,
+    it is all dusty, and the dust is proof it has seen the playa. Come dig through it.
+  </p>
+  <div class="facts">
+    <span><b>&#10022;</b> Barn pickup, address shared when you book</span>
+    <span><b>&#10022;</b> Almost any time, Aug 10 to 23</span>
+    <span><b>&#10022;</b> No checkout, just come talk</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn btn-red" href="#anchors">See the big gear</a>
+    <a class="btn btn-ghost" href="#contact">Ping Santa</a>
+  </div>
+  <div class="horizon" aria-hidden="true"></div>
+</header>
+
+<!-- ornament rope -->
+<div class="ornaments" aria-hidden="true">
+  <div class="rope"></div>
+  <div class="row">
+    <span class="bauble"></span><span class="bauble"></span><span class="bauble"></span><span class="bauble"></span>
+    <span class="bauble"></span><span class="bauble"></span><span class="bauble"></span><span class="bauble"></span>
+  </div>
+</div>
+
+<!-- ================= ANCHOR LISTINGS ================= -->
+<section class="anchors wrap" id="anchors">
+  <div class="section-head">
+    <h2>The big gear</h2>
+    <p class="note">Each one is on Facebook Marketplace. Tap through to claim it.</p>
+  </div>
+  <hr class="thin-rule">
+
+  <a class="listing" href="https://www.facebook.com/marketplace/item/1797411361445425" target="_blank" rel="noopener">
+    <span class="num">01</span>
+    <span class="cell">
+      <h3>ShiftPod 2</h3>
+      <p>The 12x12 classic burn shelter. Reflective shell, AC ports, roughly 70 lbs.
+         Most have seen 2 or 3 burns. Multiple available.</p>
+      <span class="go">See it on Marketplace &rarr;</span>
+    </span>
+    <span class="price">$900</span>
+    <img class="thumb" src="img/shiftpods.jpg" alt="ShiftPods stacked in the barn" loading="lazy">
+  </a>
+
+  <a class="listing" href="https://www.facebook.com/marketplace/item/1520103276005791" target="_blank" rel="noopener">
+    <span class="num">02</span>
+    <span class="cell">
+      <h3>ShiftPod Mini</h3>
+      <p>Smaller, cheaper, still a fortress. Zippable floor and rain fly. 2018 and 2019 stock.</p>
+      <span class="go">See it on Marketplace &rarr;</span>
+    </span>
+    <span class="price">$400</span>
+  </a>
+
+  <a class="listing" href="https://www.facebook.com/marketplace/item/2590038988079173" target="_blank" rel="noopener">
+    <span class="num">03</span>
+    <span class="cell">
+      <h3>SP2 Connection Tunnels</h3>
+      <p>Zip two pods into one compound. Light enough to ship if you can't make the barn.</p>
+      <span class="go">See it on Marketplace &rarr;</span>
+    </span>
+    <span class="price">$100</span>
+  </a>
+
+  <a class="listing" href="https://www.facebook.com/marketplace/item/4512171489103557/" target="_blank" rel="noopener">
+    <span class="num">04</span>
+    <span class="cell">
+      <h3>30ft Geodesic Dome</h3>
+      <p>16ft tall, about 680 square feet of shade and glory. Lives in Santa Cruz,
+         playa delivery possible.</p>
+      <span class="go">See it on Marketplace &rarr;</span>
+    </span>
+    <span class="price">$8,000</span>
+  </a>
+</section>
+
+<!-- ================= THE BARN ================= -->
+<section class="barn wrap" id="barn">
+  <div class="section-head">
+    <h2>The Barn</h2>
+    <p class="note">Everything below: ping Santa to claim it. Prices marked "make an offer" mean exactly that.</p>
+  </div>
+  <hr class="thin-rule" style="margin-bottom:0">
+
+  <div class="grid">
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/trike.jpg" alt="Decorated red playa trike with basket" loading="lazy"><span class="dust">Playa proven</span></span>
+      <h4>The playa trike</h4>
+      <span class="blurb">Decorated red adult tricycle with a basket. Rolls straight into the sunset.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/water-jugs.jpg" alt="Stack of 5 gallon water jugs" loading="lazy"><span class="dust">Clean on the inside</span></span>
+      <h4>5-gal water jugs</h4>
+      <span class="blurb">"Clean on the inside." Return them for the deposit after the burn and turn a profit.</span>
+      <span class="tagline"><span class="p">$3 each</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/drums.jpg" alt="Two 55 gallon water drums" loading="lazy"><span class="dust">Well water ready</span></span>
+      <h4>55-gal water drums</h4>
+      <span class="blurb">Two of them. Fill up with our incredible well water before you roll.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/coolers.jpg" alt="A pile of coolers" loading="lazy"><span class="dust">Lots of them</span></span>
+      <h4>Coolers</h4>
+      <span class="blurb">Lots of them. Every size a camp could want.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/carport-poles.jpg" alt="Carport poles and hardware" loading="lazy"><span class="dust">Instant shade</span></span>
+      <h4>Carports, x2</h4>
+      <span class="blurb">The whole kit and caboodle: stakes, ratchet straps, tarps.</span>
+      <span class="tagline"><span class="p">$400 each</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/bikes.jpg" alt="A rack of burner bikes" loading="lazy"><span class="dust">A whole rack</span></span>
+      <h4>Burner bikes</h4>
+      <span class="blurb">A whole rack of them. Pick your steed, add a basket below.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/bike-baskets.jpg" alt="Bike baskets and racks" loading="lazy"><span class="dust">Cargo for days</span></span>
+      <h4>Bike baskets + racks</h4>
+      <span class="blurb">Because your bike needs to haul snacks and blinky things.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/wagons.jpg" alt="Folding wagons" loading="lazy"><span class="dust">Camp logistics</span></span>
+      <h4>Folding wagons</h4>
+      <span class="blurb">They fold up well for traveling. Really nice to have a cart at the burn.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/green-cart.jpg" alt="Green garden cart" loading="lazy"><span class="dust">Really good</span></span>
+      <h4>Green garden cart</h4>
+      <span class="blurb">"Really good." That is the whole review and it is accurate.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/mattresses.jpg" alt="Trifold and bifold mattresses" loading="lazy"><span class="dust">Sleep like royalty</span></span>
+      <h4>Folding mattresses</h4>
+      <span class="blurb">Trifolds, bifolds, and more. $20 now, free the closer we get to the burn.</span>
+      <span class="tagline"><span class="p">$20</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/folding-chairs.jpg" alt="Assorted folding and camp chairs" loading="lazy"><span class="dust">Big assortment</span></span>
+      <h4>Folding + camp chairs</h4>
+      <span class="blurb">A big assortment. Your camp lounge starts here.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/speakers.jpg" alt="EV stage speakers" loading="lazy"><span class="dust">Bring the noise</span></span>
+      <h4>Stage sound rig</h4>
+      <span class="blurb">EV SH-1502ER stage speakers, powered mixer, Lexicon MX200 fx.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/inverter.jpg" alt="3000 watt inverter" loading="lazy"><span class="dust">Works great</span></span>
+      <h4>3000W inverter</h4>
+      <span class="blurb">Works great. Old batteries too, probably dead, sold as-is.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/propane-gas.jpg" alt="Gas cans and propane tanks" loading="lazy"><span class="dust">Fuel up</span></span>
+      <h4>Gas cans + propane</h4>
+      <span class="blurb">Tanks and cans for stoves, heaters, and flame-adjacent art.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/fridge.jpg" alt="Refrigerator" loading="lazy"><span class="dust">Cold storage</span></span>
+      <h4>Fridge</h4>
+      <span class="blurb">$25 today, eventually free. The early camp gets the cold drinks.</span>
+      <span class="tagline"><span class="p">$25</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/freezer.jpg" alt="Custom blue chest freezer" loading="lazy"><span class="dust">Custom blue</span></span>
+      <h4>Chest freezer</h4>
+      <span class="blurb">Custom blue paint job. Ice for the whole camp.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/sump-pumps.jpg" alt="Several sump pumps" loading="lazy"><span class="dust">Move that water</span></span>
+      <h4>Sump pumps</h4>
+      <span class="blurb">Several of them, for showers, evap ponds, and grey water wrangling.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/totes.jpg" alt="HDX totes with yellow lids" loading="lazy"><span class="dust">Pack it all</span></span>
+      <h4>Totes + buckets</h4>
+      <span class="blurb">HDX yellow-lid bins plus Home Depot buckets. Playa-proof packing.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/garbage-cans.jpg" alt="Garbage cans" loading="lazy"><span class="dust">Dusty but really nice</span></span>
+      <h4>Garbage cans</h4>
+      <span class="blurb">"Dusty but really nice." Leave no trace starts with a good can.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/blue-fabric.jpg" alt="Blue stretchy decor fabric" loading="lazy"><span class="dust">Danny loved it</span></span>
+      <h4>Blue stretch fabric</h4>
+      <span class="blurb">Stretchy decor fabric. Danny loved it, your shade structure will too.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/flags.jpg" alt="Flags and marking flags" loading="lazy"><span class="dust">Fly your colors</span></span>
+      <h4>Flags + marking flags</h4>
+      <span class="blurb">Find your camp from across the playa. Mark your guylines too.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/igloo.jpg" alt="Inflatable igloo" loading="lazy"><span class="dust">Yes really</span></span>
+      <h4>Inflatable igloo</h4>
+      <span class="blurb">An igloo. In the desert. Maybe with a fan. Peak playa logic.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card" href="#contact">
+      <span class="ph"><img src="img/bean-bag.jpg" alt="Large bean bag" loading="lazy"><span class="dust">Chill station</span></span>
+      <h4>Bean bag</h4>
+      <span class="blurb">The lounge upgrade your chill space deserves.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+    <a class="card card-text" href="#contact">
+      <span class="ph">
+        <span class="hex" aria-hidden="true"></span>
+        <p>Made by Vinay Gupta himself. Yes, the guy who invented hexayurts. Come see it in person.</p>
+      </span>
+      <h4>The hexayurt</h4>
+      <span class="blurb">A piece of burn history, built by its inventor.</span>
+      <span class="tagline"><span class="ask">make an offer</span><span class="claim">Claim it &rarr;</span></span>
+    </a>
+
+  </div>
+
+  <!-- the santa wink -->
+  <div class="wink">
+    <figure class="polaroid">
+      <img src="img/santa.jpg" alt="Inflatable Santa standing in the barn" loading="lazy">
+      <figcaption>Barn security.</figcaption>
+    </figure>
+    <blockquote>
+      Yes, there is literally an inflatable Santa in the barn.
+      <span>He is not for sale. Everything around him is.</span>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ================= PICKUP ================= -->
+<section class="pickup" id="pickup">
+  <div class="wrap">
+    <p class="eyebrow">How pickup works</p>
+    <div class="section-head" style="margin-top:6px">
+      <h2>Three steps to treasure</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">i.</span>
+        <h3>Ping Santa</h3>
+        <p>Telegram or email, whatever is easiest. Tell him what caught your eye and when you can swing by.</p>
+      </div>
+      <div class="step">
+        <span class="n">ii.</span>
+        <h3>Roll to the barn</h3>
+        <p>Rochester, WA. Exact address shared when you book. Aug 10 to 23, he can meet almost any time.</p>
+      </div>
+      <div class="step">
+        <span class="n">iii.</span>
+        <h3>Dig through it</h3>
+        <p>Come talk gear, load up, pay cash or crypto. Water drum buyers: fill up with the well water before you roll.</p>
+      </div>
+    </div>
+    <p class="fine">
+      Extension cords and tools are coming to the list soon. The tables are not for sale,
+      do not even ask, Santa needs somewhere to put the cocoa.
+    </p>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<footer class="contact" id="contact">
+  <p class="eyebrow" style="color:var(--rose)">Claim your treasure</p>
+  <h2 style="margin-top:14px">The sleigh is loaded. <em>Come empty it.</em></h2>
+  <p class="sub">Fastest way is Telegram. Email works too. First come, first hauled.</p>
+  <div class="cta-row">
+    <a class="btn btn-red" href="https://t.me/GriffGreen" target="_blank" rel="noopener">Telegram @GriffGreen</a>
+    <a class="btn btn-ghost" href="mailto:griff@giveth.io">griff@giveth.io</a>
+  </div>
+  <p class="addr">Rochester, WA &nbsp;&middot;&nbsp; Aug 10 to 23 &nbsp;&middot;&nbsp; Cash or Crypto</p>
+  <hr class="footer-rule">
+  <p class="colophon">
+    Santa's Burn Gear Sale &middot; no checkout, no cart, just a barn &middot;
+    <a href="#anchors">big gear</a> &middot; <a href="#barn">the barn</a>
+  </p>
+</footer>
+
+</body>
+</html>
