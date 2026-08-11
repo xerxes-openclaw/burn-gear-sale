@@ -256,7 +256,7 @@ header.hero {
 
 .polaroid .pcount {
   position: absolute; z-index: 2;
-  right: 18px; bottom: 20px;
+  left: 18px; top: 18px;
   background: rgba(51, 36, 26, 0.78); color: var(--cream);
   font-family: var(--sans); font-size: 0.72rem;
   padding: 2px 8px; border-radius: 10px;
@@ -1033,6 +1033,9 @@ document.querySelectorAll('.polaroid img').forEach(function (img) {
   var base = m[1].replace(/-\d$/, '');
   var files = GALLERY[base];
   if (!files || files.length < 2) return;
+  files = files.slice().sort(function (a, b) {
+    return (a === base + '.jpg' ? -1 : b === base + '.jpg' ? 1 : a < b ? -1 : 1);
+  });
   var i = files.indexOf(m[1] + '.jpg'); if (i < 0) i = 0;
   var badge = document.createElement('span');
   badge.className = 'pcount';
