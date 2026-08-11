@@ -590,7 +590,6 @@ footer { padding: 0; }
           <h3>SP2 Connection Tunnels</h3>
           <p>Zip two pods into one compound. The camp upgrade nobody regrets.
              Small enough to ship, so this one can come to you.</p>
-          <p style="font-size: 0.82rem; font-family: var(--hand);">real photos on the Marketplace listing</p>
           <div class="cta-row">
             <a class="btn btn-red" href="https://www.facebook.com/marketplace/item/2590038988079173" target="_blank" rel="noopener">View on Marketplace</a>
           </div>
@@ -600,24 +599,12 @@ footer { padding: 0; }
       <div class="anchor-card">
         <span class="tag">$8,000</span>
         <div class="photo">
-          <svg viewBox="0 0 400 260" role="img" aria-label="Sketch of a 30 foot geodesic dome" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="260" fill="#d9bd93"/>
-            <g stroke="#5a3a24" stroke-width="3" fill="none">
-              <path d="M60 210 A140 140 0 0 1 340 210"/>
-              <path d="M60 210 L130 120 L200 70 L270 120 L340 210"/>
-              <path d="M130 120 L200 210 L270 120"/>
-              <path d="M100 160 L200 70 L300 160"/>
-              <path d="M100 160 L130 210 M300 160 L270 210 M100 160 L200 210 L300 160"/>
-              <line x1="40" y1="210" x2="360" y2="210" stroke-width="4"/>
-            </g>
-            <text x="200" y="243" text-anchor="middle" font-size="20" fill="#5a3a24" font-family="Segoe Print, cursive">680 sq ft of shade church</text>
-          </svg>
+          <img src="img/dome.jpg" alt="The 30ft geodesic dome set up indoors">
         </div>
         <div class="body">
           <h3>30ft Geodesic Dome</h3>
           <p>16 feet tall, roughly 680 square feet. A whole camp lives under this thing.
              Currently in Santa Cruz, and playa delivery is possible.</p>
-          <p style="font-size: 0.82rem; font-family: var(--hand);">real photos on the Marketplace listing</p>
           <div class="cta-row">
             <a class="btn btn-red" href="https://www.facebook.com/marketplace/item/4512171489103557/" target="_blank" rel="noopener">View on Marketplace</a>
           </div>
@@ -1027,7 +1014,7 @@ footer { padding: 0; }
 
 <script>
 /* tap a card photo to cycle through that item's angles */
-var GALLERY = {"av-gear": ["av-gear-2.jpg", "av-gear-3.jpg", "av-gear-4.jpg", "av-gear.jpg"], "bikes": ["bikes-2.jpg", "bikes-3.jpg", "bikes.jpg"], "blue-fabric": ["blue-fabric-2.jpg", "blue-fabric-3.jpg", "blue-fabric-4.jpg", "blue-fabric.jpg"], "carport-poles": ["carport-poles-2.jpg", "carport-poles.jpg"], "electrical-cords": ["electrical-cords-2.jpg", "electrical-cords.jpg"], "free-pile": ["free-pile-2.jpg", "free-pile-3.jpg", "free-pile.jpg"], "mattresses": ["mattresses-2.jpg", "mattresses-3.jpg", "mattresses.jpg"], "mini": ["mini-2.jpg", "mini-3.jpg", "mini.jpg"], "random-tools": ["random-tools-2.jpg", "random-tools-3.jpg", "random-tools.jpg"], "ratchet-straps": ["ratchet-straps-2.jpg", "ratchet-straps-3.jpg", "ratchet-straps.jpg"], "sp2": ["sp2-2.jpg", "sp2-3.jpg", "sp2-4.jpg", "sp2.jpg"], "speakers": ["speakers-2.jpg", "speakers.jpg"], "sump-pumps": ["sump-pumps-2.jpg", "sump-pumps-3.jpg", "sump-pumps.jpg"], "trike": ["trike-2.jpg", "trike.jpg"], "tunnels": ["tunnels-2.jpg", "tunnels-3.jpg", "tunnels.jpg"]};
+var GALLERY = {"av-gear": ["av-gear-2.jpg", "av-gear-3.jpg", "av-gear-4.jpg", "av-gear.jpg"], "bikes": ["bikes-2.jpg", "bikes-3.jpg", "bikes.jpg"], "blue-fabric": ["blue-fabric-2.jpg", "blue-fabric-3.jpg", "blue-fabric-4.jpg", "blue-fabric.jpg"], "carport-poles": ["carport-poles-2.jpg", "carport-poles.jpg"], "dome": ["dome-2.jpg", "dome-3.jpg", "dome-4.jpg", "dome.jpg"], "electrical-cords": ["electrical-cords-2.jpg", "electrical-cords.jpg"], "free-pile": ["free-pile-2.jpg", "free-pile-3.jpg", "free-pile.jpg"], "mattresses": ["mattresses-2.jpg", "mattresses-3.jpg", "mattresses.jpg"], "mini": ["mini-2.jpg", "mini-3.jpg", "mini.jpg"], "random-tools": ["random-tools-2.jpg", "random-tools-3.jpg", "random-tools.jpg"], "ratchet-straps": ["ratchet-straps-2.jpg", "ratchet-straps-3.jpg", "ratchet-straps.jpg"], "sp2": ["sp2-2.jpg", "sp2-3.jpg", "sp2-4.jpg", "sp2.jpg"], "speakers": ["speakers-2.jpg", "speakers.jpg"], "sump-pumps": ["sump-pumps-2.jpg", "sump-pumps-3.jpg", "sump-pumps.jpg"], "trike": ["trike-2.jpg", "trike.jpg"], "tunnels": ["tunnels-2.jpg", "tunnels-3.jpg", "tunnels.jpg"]};
 document.querySelectorAll('.polaroid img, .anchor-card .photo img').forEach(function (img) {
   var m = (img.getAttribute('src') || '').match(/img\/(.+?)\.jpg$/);
   if (!m) return;
