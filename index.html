@@ -365,6 +365,8 @@ header.hero {
 }
 .barn-card:hover { transform: rotate(0deg) translateY(-4px) scale(1.02); z-index: 3; }
 .barn-card .polaroid img { aspect-ratio: 1 / 1.1; }
+/* diagrams show whole, not cropped */
+.polaroid img[src$="hexayurt-2.jpg"] { object-fit: contain; background: #f2ead8; filter: none; }
 /* tag pinned over the PHOTO, never over the caption text */
 .barn-card .tag { top: 22px; bottom: auto; right: -8px; font-size: 0.92rem; padding: 5px 11px 5px 20px; }
 .barn-card .cap b { color: var(--ink); font-family: var(--hand); }
