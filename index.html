@@ -377,6 +377,27 @@ header.hero {
 .barn-card:nth-child(4n+4) .polaroid { transform: rotate(2.2deg); }
 .barn-card:hover .polaroid { transform: rotate(0deg); }
 
+/* sold state: faded, stamped, no marketplace button */
+.barn-card.sold .polaroid img { filter: grayscale(1) brightness(0.9); }
+.barn-card.sold { opacity: 0.8; }
+.barn-card.sold .polaroid::after {
+  content: "SOLD";
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-16deg);
+  font-family: var(--hand);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #c0281c;
+  border: 5px solid #c0281c;
+  border-radius: 8px;
+  padding: 0 18px;
+  opacity: 0.92;
+  pointer-events: none;
+}
+
 /* ---------- how pickup works ---------- */
 .steps {
   display: grid;
@@ -732,7 +753,7 @@ footer { padding: 0; }
       </a>
 
 
-      <a class="barn-card">
+      <a class="barn-card sold">
         <span class="tag">SOLD</span>
         <div class="polaroid">
           <img src="img/green-cart.jpg" alt="Green garden cart">
@@ -1137,6 +1158,7 @@ document.querySelectorAll('.polaroid img, .anchor-card .photo img').forEach(func
 /* marketplace button per card: FB link when the listing exists, Santa otherwise */
 var MARKET = {"water-jugs": "https://www.facebook.com/marketplace/item/1067021709312557", "drums": "https://www.facebook.com/marketplace/item/2180463106157504", "coolers": "https://www.facebook.com/marketplace/item/1020931610756526", "freezer": "https://www.facebook.com/marketplace/item/1421361359971513", "buckets": "https://www.facebook.com/marketplace/item/1044963338317999", "garbage-cans": "https://www.facebook.com/marketplace/item/2018272472186294", "bikes": "https://www.facebook.com/marketplace/item/882398227998808", "bike-baskets": "https://www.facebook.com/marketplace/item/4357431824507083", "wagons": "https://www.facebook.com/marketplace/item/2850742475281155", "trike": "https://www.facebook.com/marketplace/item/1598602144977884", "mattresses": "https://www.facebook.com/marketplace/item/1779439656696166", "trifolds": "https://www.facebook.com/marketplace/item/934286805621698", "folding-chairs": "https://www.facebook.com/marketplace/item/1079916427823207", "bean-bag": "https://www.facebook.com/marketplace/item/2150115132385308", "blue-fabric": "https://www.facebook.com/marketplace/item/1409665757697254", "flags": "https://www.facebook.com/marketplace/item/2047102809270238", "propane-gas": "https://www.facebook.com/marketplace/item/1753967755645534", "sump-pumps": "https://www.facebook.com/marketplace/item/1759455608422799", "inverter": "https://www.facebook.com/marketplace/item/2092867834928370", "mixer": "https://www.facebook.com/marketplace/item/1602797231366380", "igloo": "https://www.facebook.com/marketplace/item/1689751188774019", "hexayurt": "https://www.facebook.com/marketplace/item/1361572252237620", "av-gear": "https://www.facebook.com/marketplace/item/2518034912006754", "ratchet-straps": "https://www.facebook.com/marketplace/item/1025924746992283", "random-tools": "https://www.facebook.com/marketplace/item/1270719462788916", "can-openers": "https://www.facebook.com/marketplace/item/1360263785696422", "free-pile": "https://www.facebook.com/marketplace/item/1025802440250244", "bbq": "https://www.facebook.com/marketplace/item/1074909891889845"};
 document.querySelectorAll('.barn-card .polaroid').forEach(function (pol) {
+  if (pol.closest('.sold')) return;
   var img = pol.querySelector('img');
   if (!img) return;
   var m = (img.getAttribute('src') || '').match(/img\/(.+?)\.jpg$/);
