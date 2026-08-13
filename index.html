@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Santa's Burn Gear Sale · Rochester, WA</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%85%3C/text%3E%3C/svg%3E">
-<meta name="description" content="Santa is cleaning out the barn before the burn. ShiftPods, a 30ft dome, bikes, water jugs, and a whole barn of playa gear. Rochester WA pickup, Aug 10-30.">
+<meta name="description" content="Santa is cleaning out the barn before the burn. ShiftPods, a 30ft dome, bikes, water jugs, and a whole barn of playa gear. Rochester WA pickup, Aug 10-31.">
 <style>
 /* ============================================================
    SANTA'S DUSTY WORKSHOP x DESERT NOEL, hybrid D
@@ -323,6 +323,7 @@ header.hero {
   border: 1px solid rgba(122, 82, 54, 0.18);
 }
 .anchor-card .photo {
+  position: relative;
   height: 260px;
   overflow: hidden;
   border-radius: 6px 6px 0 0;
@@ -380,6 +381,24 @@ header.hero {
 /* sold state: faded, stamped, no marketplace button */
 .barn-card.sold .polaroid img { filter: grayscale(1) brightness(0.9); }
 .barn-card.sold { opacity: 0.8; }
+.barn-card.pending .polaroid::after, .anchor-card.pending .photo::after {
+  content: "PENDING";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-14deg);
+  font-family: var(--hand);
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: #d99a2b;
+  border: 4px solid #d99a2b;
+  border-radius: 8px;
+  padding: 0 14px;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 2;
+}
 .barn-card.sold .polaroid::after {
   content: "SOLD";
   position: absolute;
@@ -538,7 +557,7 @@ footer { padding: 0; }
   </div>
   <div class="hero-inner">
     <div>
-      <p class="kicker-line">Rochester, WA &middot; Aug 10 to 30 &middot; Cash or Crypto</p>
+      <p class="kicker-line">Rochester, WA &middot; Aug 10 to 31 &middot; Cash or Crypto</p>
       <h1>Santa is giving <em>the barn</em> away.</h1>
       <p class="pitch">
         Fifteen years of burns. Shutting down Camp Decentral and selling off the gear,
@@ -617,7 +636,7 @@ footer { padding: 0; }
         </div>
       </div>
 
-      <div class="anchor-card">
+      <div class="anchor-card pending">
         <span class="tag">$8,000</span>
         <div class="photo">
           <img src="img/dome.jpg" alt="The 30ft geodesic dome set up indoors">
@@ -640,7 +659,7 @@ footer { padding: 0; }
 <section id="camp">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">The barn is just the half of it</div>
+      <div class="kicker">The barn isn't even the half of it</div>
       <h2>Want to start a camp?</h2>
       <p class="sub">I have a whole semi-trailer full of burn gear stored near the playa. A ready-made camp in a box, and next year I'll help you build it.</p>
     </div>
@@ -769,7 +788,7 @@ footer { padding: 0; }
         </div>
       </a>
 
-      <a class="barn-card">
+      <a class="barn-card pending">
         <span class="tag">$75</span>
         <div class="polaroid">
           <img src="img/trike.jpg" alt="Decorated red playa trike with basket">
@@ -851,8 +870,8 @@ footer { padding: 0; }
         </div>
       </a>
 
-      <a class="barn-card">
-        <span class="tag">$75</span>
+      <a class="barn-card sold">
+        <span class="tag">SOLD</span>
         <div class="polaroid">
           <img src="img/igloo.jpg" alt="Inflatable igloo packed in the barn">
           <div class="cap"><b>Inflatable igloo</b><br>"it's basically an inflatable igloo." A ready-made chill dome</div>
@@ -905,7 +924,7 @@ footer { padding: 0; }
         <span class="tag">$100</span>
         <div class="polaroid">
           <img src="img/inverter.jpg" alt="3000 watt inverter">
-          <div class="cap"><b>3000W inverter</b><br>Works great, Santa just doesn't need it. Old batteries too, sold as-is</div>
+          <div class="cap"><b>3000W inverter</b><br>Santa doesn't need it, and it wants a test: bring a battery and try it at pickup. Old batteries too, sold as-is</div>
         </div>
       </a>
 
@@ -918,7 +937,7 @@ footer { padding: 0; }
       </a>
 
       <a class="barn-card">
-        <span class="tag">$7 each</span>
+        <span class="tag">$2 each</span>
         <div class="polaroid">
           <img src="img/duct-gates.jpg" alt="4 inch duct blast gates">
           <div class="cap"><b>4-inch duct gates (x40)</b><br>slide gates for 4 inch ducting. Shut the cold air off without unhooking anything. Pair them with the ducts in the pile</div>
@@ -995,7 +1014,7 @@ footer { padding: 0; }
         <span class="tag">$45</span>
         <div class="polaroid">
           <img src="img/toilet.jpg" alt="Cleanwaste portable toilet">
-          <div class="cap"><b>Cleanwaste portable toilet</b><br>the real fold-up Go Anywhere unit, $85 new. Playa dust is the only thing wrong with it</div>
+          <div class="cap"><b>Cleanwaste portable toilet</b><br>the real fold-up Go Anywhere unit, $85 new. Never used, and it comes with a stack of bags</div>
         </div>
       </a>
 
@@ -1012,14 +1031,6 @@ footer { padding: 0; }
         <div class="polaroid">
           <img src="img/can-openers.jpg" alt="A pile of can openers and kitchen utensils">
           <div class="cap"><b>Can openers + kitchen bits</b><br>a lot of can openers. Plus a bin of spatulas, knives and servers, and some nice pots</div>
-        </div>
-      </a>
-
-      <a class="barn-card">
-        <span class="tag">$2-15</span>
-        <div class="polaroid">
-          <img src="img/free-pile-2.jpg" alt="Odds and ends in the barn">
-          <div class="cap"><b>Odds + ends, all priced</b><br>vinegar $2 a gallon, blankets $2-5, rigid foam insulation $10 a sheet, the good costume pieces $3-5</div>
         </div>
       </a>
 
@@ -1041,7 +1052,7 @@ footer { padding: 0; }
     <div class="section-head">
       <div class="kicker">no sleigh required</div>
       <h2>How Pickup Works</h2>
-      <p class="sub">Simple as a gift exchange. Aug 10 to 30, almost any time works.</p>
+      <p class="sub">Simple as a gift exchange. Aug 10 to 31, almost any time works.</p>
     </div>
     <div class="steps">
       <div class="step">
@@ -1052,7 +1063,7 @@ footer { padding: 0; }
       <div class="step">
         <div class="num">2</div>
         <h3>Book a time</h3>
-        <p>Aug 10 to 30, super flexible. Address shared when you book.</p>
+        <p>Aug 10 to 31, super flexible. Address shared when you book.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
@@ -1066,7 +1077,7 @@ footer { padding: 0; }
       </div>
     </div>
     <p style="text-align: center; font-family: var(--hand); color: var(--dust-red); font-size: 1.05rem; margin-top: 30px;">
-      The barn closes Aug 30 when Santa packs. After that, it's gone.
+      The barn closes Aug 31 when Santa packs. After that, it's gone.
     </p>
   </div>
 </section>
@@ -1108,7 +1119,7 @@ footer { padding: 0; }
     </div>
   </div>
   <div class="fineprint">
-    Rochester, WA · Aug 10 to 30 · cash or crypto · playa dust included, no extra charge
+    Rochester, WA · Aug 10 to 31 · cash or crypto · playa dust included, no extra charge
   </div>
 </footer>
 
@@ -1132,7 +1143,7 @@ footer { padding: 0; }
 
 <script>
 /* tap a card photo to cycle through that item's angles */
-var GALLERY = {"av-gear": ["av-gear-2.jpg", "av-gear-3.jpg", "av-gear-4.jpg", "av-gear-5.jpg", "av-gear-6.jpg", "av-gear.jpg"], "bikes": ["bikes-2.jpg", "bikes-3.jpg", "bikes.jpg"], "blue-fabric": ["blue-fabric-2.jpg", "blue-fabric-3.jpg", "blue-fabric-4.jpg", "blue-fabric.jpg"], "dome": ["dome-2.jpg", "dome-3.jpg", "dome-4.jpg", "dome.jpg"], "electrical-cords": ["electrical-cords-2.jpg", "electrical-cords-3.jpg", "electrical-cords.jpg"], "coolers": ["coolers-2.jpg", "coolers.jpg"], "trifolds-queen": ["trifolds-queen-2.jpg", "trifolds-queen.jpg"], "flags": ["flags-1.jpg", "flags-2.jpg", "flags-3.jpg"], "wagons": ["wagons-2.jpg", "wagons.jpg"], "free-pile": ["free-pile-2.jpg", "free-pile-3.jpg", "free-pile-4.jpg", "free-pile.jpg"], "green-cart": ["green-cart-2.jpg", "green-cart.jpg"], "hexayurt": ["hexayurt-2.jpg", "hexayurt-3.jpg", "hexayurt.jpg"], "mattresses": ["mattresses-2.jpg", "mattresses-3.jpg", "mattresses-4.jpg", "mattresses.jpg"], "mini": ["mini-2.jpg", "mini.jpg"], "random-tools": ["random-tools-2.jpg", "random-tools-3.jpg", "random-tools.jpg"], "ratchet-straps": ["ratchet-straps-2.jpg", "ratchet-straps-3.jpg", "ratchet-straps.jpg"], "sp2": ["sp2-2.jpg", "sp2-3.jpg", "sp2.jpg"], "sump-pumps": ["sump-pumps-2.jpg", "sump-pumps-3.jpg", "sump-pumps.jpg"], "trifolds": ["trifolds-2.jpg", "trifolds.jpg"], "trike": ["trike-2.jpg", "trike.jpg"], "tunnels": ["tunnels-2.jpg", "tunnels-3.jpg", "tunnels.jpg"]};
+var GALLERY = {"av-gear": ["av-gear-2.jpg", "av-gear-3.jpg", "av-gear-4.jpg", "av-gear-5.jpg", "av-gear-6.jpg", "av-gear.jpg"], "bikes": ["bikes-2.jpg", "bikes-3.jpg", "bikes.jpg"], "blue-fabric": ["blue-fabric-2.jpg", "blue-fabric-3.jpg", "blue-fabric-4.jpg", "blue-fabric.jpg"], "dome": ["dome-2.jpg", "dome-3.jpg", "dome-4.jpg", "dome.jpg"], "electrical-cords": ["electrical-cords-2.jpg", "electrical-cords-3.jpg", "electrical-cords.jpg"], "coolers": ["coolers-2.jpg", "coolers.jpg"], "trifolds-queen": ["trifolds-queen-2.jpg", "trifolds-queen-3.jpg", "trifolds-queen.jpg"], "flags": ["flags-1.jpg", "flags-2.jpg", "flags-3.jpg"], "wagons": ["wagons-2.jpg", "wagons.jpg"], "free-pile": ["free-pile-2.jpg", "free-pile-3.jpg", "free-pile-4.jpg", "free-pile.jpg"], "green-cart": ["green-cart-2.jpg", "green-cart.jpg"], "hexayurt": ["hexayurt-2.jpg", "hexayurt-3.jpg", "hexayurt.jpg"], "mattresses": ["mattresses-2.jpg", "mattresses-3.jpg", "mattresses-4.jpg", "mattresses.jpg"], "mini": ["mini-2.jpg", "mini.jpg", "sp2-3.jpg"], "random-tools": ["random-tools-2.jpg", "random-tools-3.jpg", "random-tools.jpg"], "ratchet-straps": ["ratchet-straps-2.jpg", "ratchet-straps-3.jpg", "ratchet-straps.jpg"], "sp2": ["sp2-2.jpg", "sp2-3.jpg", "sp2.jpg"], "sump-pumps": ["sump-pumps-2.jpg", "sump-pumps-3.jpg", "sump-pumps.jpg"], "trifolds": ["trifolds-2.jpg", "trifolds-3.jpg", "trifolds.jpg"], "trike": ["trike-2.jpg", "trike.jpg"], "tunnels": ["tunnels-2.jpg", "tunnels.jpg"]};
 document.querySelectorAll('.polaroid img, .anchor-card .photo img').forEach(function (img) {
   var m = (img.getAttribute('src') || '').match(/img\/(.+?)\.jpg$/);
   if (!m) return;
