@@ -56,6 +56,21 @@ p.note { font-size: 0.85rem; color: #6b5c48; margin-bottom: 20px; }
   margin-top: 8px;
   padding-top: 6px;
 }
+
+/* marketplace status layers */
+.ad.on { border-left: 6px solid #2e7d32; background: #f1f7f1; }
+.ad.off { border-left: 6px solid #c62828; background: #fdf2f1; }
+.ad::before {
+  float: right;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin: 2px 0 4px 10px;
+}
+.ad.on::before { content: "ON MARKETPLACE"; background: #2e7d32; color: #fff; }
+.ad.off::before { content: "NOT POSTED YET"; background: #c62828; color: #fff; }
 </style>
 </head>
 <body>
@@ -391,5 +406,22 @@ function cp(btn) {
 }
 </script>
 
+<script>
+/* green = has a live Marketplace listing, red = not posted yet.
+   Keep POSTED in sync with the MARKET map in index.html (plus ads-only listings). */
+var POSTED = ["water-jugs","drums","coolers","freezer","buckets","garbage-cans","bikes",
+  "bike-baskets","wagons","trike","mattresses","trifolds","folding-chairs","bean-bag",
+  "blue-fabric","flags","propane-gas","sump-pumps","inverter","mixer","igloo","hexayurt",
+  "av-gear","ratchet-straps","random-tools","can-openers","free-pile","bbq","batteries"];
+document.querySelectorAll('.ad').forEach(function (ad) {
+  var img = ad.querySelector('.thumbs img');
+  var base = null;
+  if (img) {
+    var m = (img.getAttribute('src') || '').match(/img\/(.+?)\.jpg$/);
+    if (m) base = m[1].replace(/-\d+$/, '');
+  }
+  ad.classList.add(base && POSTED.indexOf(base) !== -1 ? 'on' : 'off');
+});
+</script>
 </body>
 </html>
