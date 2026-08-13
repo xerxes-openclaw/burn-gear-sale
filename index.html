@@ -809,7 +809,7 @@ footer { padding: 0; }
       <a class="barn-card">
         <span class="tag">$70</span>
         <div class="polaroid">
-          <img src="img/trifolds-queen.jpg" alt="Queen size folding foam mattress">
+          <img src="img/trifolds-queen-4.jpg" alt="Santa lounging on the queen trifold couch">
           <div class="cap"><b>Queen trifold mattress</b><br>the big one, thick foam, folds up for transport. The comfy upgrade</div>
         </div>
       </a>
@@ -817,7 +817,7 @@ footer { padding: 0; }
       <a class="barn-card">
         <span class="tag">$60</span>
         <div class="polaroid">
-          <img src="img/trifolds.jpg" alt="Twin trifold foam mattresses">
+          <img src="img/trifolds-3.jpg" alt="Santa sitting on the twin trifold couch">
           <div class="cap"><b>Twin trifolds</b><br>fold to a cube, easy to haul. They go fast</div>
         </div>
       </a>
@@ -1143,16 +1143,14 @@ footer { padding: 0; }
 
 <script>
 /* tap a card photo to cycle through that item's angles */
-var GALLERY = {"av-gear": ["av-gear-2.jpg", "av-gear-3.jpg", "av-gear-4.jpg", "av-gear-5.jpg", "av-gear-6.jpg", "av-gear.jpg"], "bikes": ["bikes-2.jpg", "bikes-3.jpg", "bikes.jpg"], "blue-fabric": ["blue-fabric-2.jpg", "blue-fabric-3.jpg", "blue-fabric-4.jpg", "blue-fabric.jpg"], "dome": ["dome-2.jpg", "dome-3.jpg", "dome-4.jpg", "dome.jpg"], "electrical-cords": ["electrical-cords-2.jpg", "electrical-cords-3.jpg", "electrical-cords.jpg"], "coolers": ["coolers-2.jpg", "coolers.jpg"], "trifolds-queen": ["trifolds-queen-2.jpg", "trifolds-queen-4.jpg", "trifolds-queen.jpg"], "flags": ["flags-1.jpg", "flags-2.jpg", "flags-3.jpg"], "wagons": ["wagons-2.jpg", "wagons.jpg"], "free-pile": ["free-pile-2.jpg", "free-pile-3.jpg", "free-pile-4.jpg", "free-pile.jpg"], "green-cart": ["green-cart-2.jpg", "green-cart.jpg"], "hexayurt": ["hexayurt-2.jpg", "hexayurt-3.jpg", "hexayurt.jpg"], "mattresses": ["mattresses-2.jpg", "mattresses-3.jpg", "mattresses-4.jpg", "mattresses.jpg"], "mini": ["mini-2.jpg", "mini.jpg", "sp2-3.jpg"], "propane-gas": ["propane-gas-2.jpg", "propane-gas.jpg"], "garbage-cans": ["garbage-cans-2.jpg", "garbage-cans.jpg"], "random-tools": ["random-tools-2.jpg", "random-tools-3.jpg", "random-tools.jpg"], "ratchet-straps": ["ratchet-straps-2.jpg", "ratchet-straps-3.jpg", "ratchet-straps.jpg"], "sp2": ["sp2-2.jpg", "sp2-3.jpg", "sp2.jpg"], "sump-pumps": ["sump-pumps-2.jpg", "sump-pumps-3.jpg", "sump-pumps.jpg"], "trifolds": ["trifolds-2.jpg", "trifolds-3.jpg", "trifolds.jpg"], "trike": ["trike-2.jpg", "trike.jpg"], "tunnels": ["tunnels-0.jpg", "tunnels-2.jpg"]};
+var GALLERY = {"av-gear": ["av-gear.jpg", "av-gear-2.jpg", "av-gear-3.jpg", "av-gear-4.jpg", "av-gear-5.jpg", "av-gear-6.jpg"], "bikes": ["bikes.jpg", "bikes-2.jpg", "bikes-3.jpg"], "blue-fabric": ["blue-fabric.jpg", "blue-fabric-2.jpg", "blue-fabric-3.jpg", "blue-fabric-4.jpg"], "dome": ["dome.jpg", "dome-2.jpg", "dome-3.jpg", "dome-4.jpg"], "electrical-cords": ["electrical-cords.jpg", "electrical-cords-2.jpg", "electrical-cords-3.jpg"], "coolers": ["coolers.jpg", "coolers-2.jpg"], "trifolds-queen": ["trifolds-queen-4.jpg", "trifolds-queen.jpg", "trifolds-queen-2.jpg"], "flags": ["flags-1.jpg", "flags-2.jpg", "flags-3.jpg"], "wagons": ["wagons.jpg", "wagons-2.jpg"], "free-pile": ["free-pile.jpg", "free-pile-2.jpg", "free-pile-3.jpg", "free-pile-4.jpg"], "green-cart": ["green-cart.jpg", "green-cart-2.jpg"], "hexayurt": ["hexayurt.jpg", "hexayurt-2.jpg", "hexayurt-3.jpg"], "mattresses": ["mattresses.jpg", "mattresses-2.jpg", "mattresses-3.jpg", "mattresses-4.jpg"], "mini": ["mini.jpg", "mini-2.jpg", "sp2-3.jpg"], "propane-gas": ["propane-gas.jpg", "propane-gas-2.jpg"], "garbage-cans": ["garbage-cans.jpg", "garbage-cans-2.jpg"], "random-tools": ["random-tools.jpg", "random-tools-2.jpg", "random-tools-3.jpg"], "ratchet-straps": ["ratchet-straps.jpg", "ratchet-straps-2.jpg", "ratchet-straps-3.jpg"], "sp2": ["sp2.jpg", "sp2-2.jpg", "sp2-3.jpg"], "sump-pumps": ["sump-pumps.jpg", "sump-pumps-2.jpg", "sump-pumps-3.jpg"], "trifolds": ["trifolds-3.jpg", "trifolds.jpg", "trifolds-2.jpg"], "trike": ["trike.jpg", "trike-2.jpg"], "tunnels": ["tunnels-0.jpg", "tunnels-2.jpg"]};
 document.querySelectorAll('.polaroid img, .anchor-card .photo img').forEach(function (img) {
   var m = (img.getAttribute('src') || '').match(/img\/(.+?)\.jpg$/);
   if (!m) return;
   var base = m[1].replace(/-\d$/, '');
   var files = GALLERY[base];
   if (!files || files.length < 2) return;
-  files = files.slice().sort(function (a, b) {
-    return (a === base + '.jpg' ? -1 : b === base + '.jpg' ? 1 : a < b ? -1 : 1);
-  });
+  files = files.slice(); // display order = GALLERY list order
   var i = files.indexOf(m[1] + '.jpg'); if (i < 0) i = 0;
   var badge = document.createElement('span');
   badge.className = 'pcount';
