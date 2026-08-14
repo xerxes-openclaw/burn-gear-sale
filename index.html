@@ -399,6 +399,27 @@ header.hero {
   pointer-events: none;
   z-index: 2;
 }
+.anchor-card.sold .photo img { filter: grayscale(1) brightness(0.9); }
+.anchor-card.sold { opacity: 0.85; }
+.anchor-card.sold .btn { display: none; }
+.anchor-card.sold .photo::after {
+  content: "SOLD";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-14deg);
+  font-family: var(--hand);
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #c0281c;
+  border: 5px solid #c0281c;
+  border-radius: 8px;
+  padding: 0 18px;
+  opacity: 0.92;
+  pointer-events: none;
+  z-index: 2;
+}
 .barn-card.sold .polaroid::after {
   content: "SOLD";
   position: absolute;
@@ -636,8 +657,8 @@ footer { padding: 0; }
         </div>
       </div>
 
-      <div class="anchor-card pending">
-        <span class="tag">$8,000</span>
+      <div class="anchor-card sold">
+        <span class="tag">SOLD</span>
         <div class="photo">
           <img src="img/dome.jpg" alt="The 30ft geodesic dome set up indoors">
         </div>
