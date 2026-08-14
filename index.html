@@ -1195,10 +1195,8 @@ document.querySelectorAll('.barn-card .polaroid').forEach(function (pol) {
     btn.rel = 'noopener';
     btn.textContent = 'View on Marketplace';
   } else {
-    btn.href = 'https://www.facebook.com/marketplace/';
-    btn.target = '_blank';
-    btn.rel = 'noopener';
-    btn.textContent = 'View it on Marketplace';
+    btn.href = '#contact';
+    btn.textContent = 'Contact Santa';
   }
   btn.addEventListener('click', function (e) { e.stopPropagation(); });
   pol.appendChild(btn);
